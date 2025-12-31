@@ -53,7 +53,8 @@ export default function AppRoutes() {
       <Route path="/partnership/bpp" element={<BPP />} />
       <Route path="/partnership/sales-structure" element={<SalesStructure />} />
 
-      <Route path="/partnership/ipp-vs-bpp" element={<IPPvsBPP />} />
+      <Route path="/partnership/comparison" element={<IPPvsBPP />} />
+
       <Route path="/solutions/it-software" element={<ITSoftware />} />
       <Route path="/solutions/hr-recruitment" element={<HRRecruitment />} />
       <Route path="/solutions/digital-marketing" element={<DigitalMarketing />} />
