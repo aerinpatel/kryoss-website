@@ -23,7 +23,6 @@ import {
   Briefcase
 } from 'lucide-react';
 import Footer from '../../components/layout/Footer';
-
 /**
  * Custom CSS for the marquee and cinematic animations
  */
