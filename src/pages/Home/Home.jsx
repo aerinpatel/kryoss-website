@@ -8,10 +8,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <WhatIsNot />
-      <HowItWorks />
-      <Brands />
-      <CTA />
+      
     </>
   );
 }
