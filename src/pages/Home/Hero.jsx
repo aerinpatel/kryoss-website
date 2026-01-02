@@ -16,7 +16,7 @@ export default function Hero() {
         </FadeUp>
 
         <FadeUp delay={0.2}>
-          <p className="mt-6 max-w-2xl text-gray-400 text-lg">
+          <p className="mt-6 max-w-2xl text-[var(--text-secondary)] text-lg">
             Zryoss is a business operating platform where partners focus on sales
             while demos, delivery, vendors and operations are managed centrally.
           </p>

@@ -12,7 +12,7 @@ export default function Ecosystem() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-4xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-4xl text-[var(--text-secondary)] text-lg">
             Zryoss operates as a multi-layered business ecosystem where
             platform systems, brands, vendors, and partners work together
             under centralized governance.
@@ -40,10 +40,10 @@ export default function Ecosystem() {
           ].map((item, i) => (
             <FadeUp key={i} delay={i * 0.1}>
               <div className="border border-[var(--border)] rounded-xl p-8 bg-[var(--bg-card)]">
-                <h3 className="text-xl font-semibold text-orange-400">
+                <h3 className="text-xl font-semibold text-[var(--accent)]">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-[var(--text-muted)] text-sm">
+                <p className="mt-4 text-[var(--text-secondary)] text-sm">
                   {item.desc}
                 </p>
               </div>

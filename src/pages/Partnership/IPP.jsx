@@ -14,7 +14,7 @@ export default function IPP() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-3xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-3xl text-[var(--text-secondary)] text-lg">
             An IPP is an independent business operator who runs their own
             brand and sales operations while leveraging Zryoss’s centralized
             delivery, demo, and operational infrastructure.
@@ -25,10 +25,10 @@ export default function IPP() {
         <div className="mt-24 grid md:grid-cols-2 gap-12">
           <FadeUp>
             <div className="border border-[var(--border)] rounded-xl p-8 bg-[var(--bg-card)]">
-              <h3 className="text-2xl font-semibold text-orange-400">
+              <h3 className="text-2xl font-semibold text-[var(--accent)]">
                 What an IPP Does
               </h3>
-              <ul className="mt-6 space-y-3 text-[var(--text-muted)]">
+              <ul className="mt-6 space-y-3 text-[var(--text-secondary)]">
                 <li>• Builds and promotes their own business brand</li>
                 <li>• Acquires and manages clients</li>
                 <li>• Leads sales strategy and growth</li>
@@ -41,10 +41,10 @@ export default function IPP() {
           {/* ZRYOSS ROLE */}
           <FadeUp delay={0.2}>
             <div className="border border-[var(--border)] rounded-xl p-8 bg-[var(--bg-card)]">
-              <h3 className="text-2xl font-semibold text-orange-400">
+              <h3 className="text-2xl font-semibold text-[var(--accent)]">
                 What Zryoss Handles
               </h3>
-              <ul className="mt-6 space-y-3 text-[var(--text-muted)]">
+              <ul className="mt-6 space-y-3 text-[var(--text-secondary)]">
                 <li>• Product demos & pre-sales support</li>
                 <li>• Service delivery & vendor coordination</li>
                 <li>• Quality assurance & SLAs</li>
@@ -57,12 +57,12 @@ export default function IPP() {
 
         {/* WHAT IPP IS NOT */}
         <FadeUp delay={0.35}>
-          <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-gradient-to-r from-orange-500/10 to-transparent">
+          <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-gradient-to-r from-[var(--accent)]/10 to-transparent">
             <h3 className="text-3xl font-semibold">
               What IPP Is NOT
             </h3>
 
-            <ul className="mt-6 space-y-3 text-[var(--text-muted)] max-w-4xl">
+            <ul className="mt-6 space-y-3 text-[var(--text-secondary)] max-w-4xl">
               <li>• Not a franchise</li>
               <li>• Not an MLM or network program</li>
               <li>• Not a passive income model</li>
@@ -70,7 +70,7 @@ export default function IPP() {
               <li>• Not an investment scheme</li>
             </ul>
 
-            <p className="mt-6 text-sm text-[var(--text-muted)] max-w-4xl">
+            <p className="mt-6 text-sm text-[var(--text-secondary)] max-w-4xl">
               IPP earnings are directly linked to real business sales and
               successful service delivery — not referrals or team recruitment.
             </p>

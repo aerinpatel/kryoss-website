@@ -12,7 +12,7 @@ export default function CTA() {
         </FadeUp>
 
         <FadeUp delay={0.2}>
-          <p className="mt-6 text-gray-300 max-w-2xl mx-auto">
+          <p className="mt-6 text-[var(--text-main)] max-w-2xl mx-auto">
             Join Zryoss as a partner and focus on sales while we manage demos,
             delivery, vendors, and operations.
           </p>

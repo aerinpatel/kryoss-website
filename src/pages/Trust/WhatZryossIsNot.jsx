@@ -13,7 +13,7 @@ export default function WhatZryossIsNot() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-4xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-4xl text-[var(--text-secondary)] text-lg">
             To ensure complete transparency, this page clearly outlines what
             Zryoss does not represent or operate as.
           </p>
@@ -52,7 +52,7 @@ export default function WhatZryossIsNot() {
                 <h3 className="text-xl font-semibold text-red-400">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-[var(--text-muted)] text-sm">
+                <p className="mt-4 text-[var(--text-secondary)] text-sm">
                   {item.desc}
                 </p>
               </div>
@@ -62,8 +62,8 @@ export default function WhatZryossIsNot() {
 
         {/* FINAL CLARITY */}
         <FadeUp delay={0.4}>
-          <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-gradient-to-r from-orange-500/10 to-transparent">
-            <p className="max-w-4xl text-[var(--text-muted)]">
+          <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-gradient-to-r from-[var(--accent)]/10 to-transparent">
+            <p className="max-w-4xl text-[var(--text-secondary)]">
               Zryoss is a business operating platform designed to support real
               business activity. All participants are expected to engage in
               genuine sales, client management, and service delivery aligned

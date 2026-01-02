@@ -40,7 +40,7 @@ export default function KnowledgeCenter() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-3xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-3xl text-[var(--text-secondary)] text-lg">
             In-depth explanations of Zryoss concepts, terminology, and
             operational models to support informed engagement.
           </p>
@@ -51,10 +51,10 @@ export default function KnowledgeCenter() {
           {topics.map((topic, i) => (
             <FadeUp key={i} delay={i * 0.05}>
               <div className="border border-[var(--border)] rounded-xl p-8 bg-[var(--bg-card)]">
-                <h3 className="text-xl font-semibold text-orange-400">
+                <h3 className="text-xl font-semibold text-[var(--accent)]">
                   {topic.title}
                 </h3>
-                <p className="mt-4 text-[var(--text-muted)] text-sm">
+                <p className="mt-4 text-[var(--text-secondary)] text-sm">
                   {topic.desc}
                 </p>
               </div>

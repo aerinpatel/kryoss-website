@@ -35,7 +35,7 @@ export default function HowItWorks() {
         </FadeUp>
 
         <FadeUp delay={0.2}>
-          <p className="mt-4 text-center text-gray-400 max-w-3xl mx-auto">
+          <p className="mt-4 text-center text-[var(--text-secondary)] max-w-3xl mx-auto">
             Zryoss is a business operating platform where partners focus on sales
             while operations, demos, vendors, and delivery are centrally managed.
           </p>
@@ -54,13 +54,13 @@ export default function HowItWorks() {
                   {step.title}
                 </h3>
 
-                <p className="mt-2 text-sm text-gray-400">
+                <p className="mt-2 text-sm text-[var(--text-secondary)]">
                   {step.desc}
                 </p>
 
                 {/* Arrow for desktop */}
                 {index !== steps.length - 1 && (
-                  <ArrowRight className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 text-gray-600" />
+                  <ArrowRight className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 text-[var(--text-muted)]" />
                 )}
               </div>
             </FadeUp>
@@ -70,7 +70,7 @@ export default function HowItWorks() {
         {/* Anti-MLM Disclaimer */}
         <FadeUp delay={0.4}>
           <div className="mt-16 max-w-4xl mx-auto text-center border border-gray-800 rounded-xl p-6 bg-[#020617]">
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-[var(--text-secondary)]">
               ⚠️ <span className="text-white font-medium">Important:</span>{" "}
               Zryoss does not offer recruitment-based income, passive earnings,
               or referral commissions. All earnings are strictly linked to real

@@ -13,7 +13,7 @@ export default function Resources() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-3xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-3xl text-[var(--text-secondary)] text-lg">
             Access insights, documentation, and guidance to better understand
             Zryoss, its ecosystem, and how to engage effectively.
           </p>
@@ -51,12 +51,12 @@ export default function Resources() {
             <FadeUp key={i} delay={i * 0.1}>
               <a
                 href={item.path}
-                className="block border border-[var(--border)] rounded-xl p-8 bg-[var(--bg-card)] hover:border-orange-500 transition"
+                className="block border border-[var(--border)] rounded-xl p-8 bg-[var(--bg-card)] hover:border-[var(--accent)] transition"
               >
-                <h3 className="text-xl font-semibold text-orange-400">
+                <h3 className="text-xl font-semibold text-[var(--accent)]">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-[var(--text-muted)] text-sm">
+                <p className="mt-4 text-[var(--text-secondary)] text-sm">
                   {item.desc}
                 </p>
               </a>

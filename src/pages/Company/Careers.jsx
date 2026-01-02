@@ -14,7 +14,7 @@ export default function Careers() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-3xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-3xl text-[var(--text-secondary)] text-lg">
             Build meaningful work around operations, platforms, and scalable
             business execution.
           </p>
@@ -38,10 +38,10 @@ export default function Careers() {
           ].map((item, i) => (
             <FadeUp key={i} delay={i * 0.1}>
               <div className="border border-[var(--border)] rounded-xl p-8 bg-[var(--bg-card)] h-full">
-                <h3 className="text-xl font-semibold text-orange-400">
+                <h3 className="text-xl font-semibold text-[var(--accent)]">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-[var(--text-muted)] text-sm">
+                <p className="mt-4 text-[var(--text-secondary)] text-sm">
                   {item.desc}
                 </p>
               </div>
@@ -52,16 +52,16 @@ export default function Careers() {
         {/* OPENINGS */}
         <FadeUp delay={0.35}>
           <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-[var(--bg-card)]">
-            <h3 className="text-3xl font-semibold text-orange-400">
+            <h3 className="text-3xl font-semibold text-[var(--accent)]">
               Current Openings
             </h3>
 
-            <p className="mt-4 text-[var(--text-muted)]">
+            <p className="mt-4 text-[var(--text-secondary)]">
               Zryoss hires selectively based on business needs.  
               Current roles may include:
             </p>
 
-            <ul className="mt-6 space-y-2 text-[var(--text-muted)]">
+            <ul className="mt-6 space-y-2 text-[var(--text-secondary)]">
               <li>• Operations & Delivery Coordination</li>
               <li>• Platform & Systems Support</li>
               <li>• Quality & Compliance</li>

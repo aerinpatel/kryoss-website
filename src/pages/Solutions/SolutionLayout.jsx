@@ -19,14 +19,14 @@ export default function SolutionLayout({
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-3xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-3xl text-[var(--text-secondary)] text-lg">
             {subtitle}
           </p>
         </FadeUp>
 
         {/* DESCRIPTION */}
         <FadeUp delay={0.25}>
-          <p className="mt-10 max-w-4xl text-[var(--text-muted)]">
+          <p className="mt-10 max-w-4xl text-[var(--text-secondary)]">
             {description}
           </p>
         </FadeUp>
@@ -36,10 +36,10 @@ export default function SolutionLayout({
           {offerings.map((item, index) => (
             <FadeUp key={index} delay={index * 0.1}>
               <div className="border border-[var(--border)] rounded-xl p-8 bg-[var(--bg-card)] h-full">
-                <h3 className="text-xl font-semibold text-orange-400">
+                <h3 className="text-xl font-semibold text-[var(--accent)]">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-[var(--text-muted)] text-sm">
+                <p className="mt-4 text-[var(--text-secondary)] text-sm">
                   {item.desc}
                 </p>
               </div>
@@ -49,12 +49,12 @@ export default function SolutionLayout({
 
         {/* CTA */}
         <FadeUp delay={0.4}>
-          <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-gradient-to-r from-orange-500/10 to-transparent">
+          <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-gradient-to-r from-[var(--accent)]/10 to-transparent">
             <h3 className="text-3xl font-semibold">
               Talk to Our Solutions Team
             </h3>
 
-            <p className="mt-4 max-w-3xl text-[var(--text-muted)]">
+            <p className="mt-4 max-w-3xl text-[var(--text-secondary)]">
               Get a tailored solution designed around your business needs.
             </p>
 

@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --bg-main: #050505;
-  --bg-card: #0d0d0d;
-  --border: #1f1f1f;
-  --text-main: #f5f5f5;
-  --text-muted: #9ca3af;
-  --accent: #f97316; /* ORANGE */
+  --bg-main: #0E0F12;
+  --bg-section: #12141A;
+  --bg-card: #161A22;
+  --border: #1F2430;
+  --accent: #FF8A00;
+  --text-main: #EDEDED;
+  --text-secondary: #A1A7B3;
+  --text-muted: #7C8394;
 }
 
 body {
@@ -17,5 +19,5 @@ body {
 
 
 .input {
-  @apply w-full px-4 py-3 rounded-lg bg-black border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-orange-400;
+  @apply w-full px-4 py-3 rounded-lg bg-[var(--bg-card)] border border-[var(--border)] text-[var(--text-main)] placeholder-[var(--text-secondary)] focus:outline-none focus:border-[var(--accent)];
 }
