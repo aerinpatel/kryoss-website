@@ -115,7 +115,7 @@ const HowItWorks = () => {
         "Higher Conversion Rates",
       ],
       visualLabel: "Technical Demo Presentation",
-      image: "/Demo-by-Zryoss.jpg",
+      image: "/Brand.jpg",
     },
     {
       label: "Step 04",
