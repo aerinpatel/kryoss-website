@@ -80,7 +80,7 @@ const App = () => {
   ];
 
   return (
-    <div className="min-h-screen -mb-110 bg-[#050505] text-white font-sans selection:bg-indigo-500/30 overflow-x-hidden">
+    <div className="min-h-screen mt-10 -mb-110 bg-[#050505] text-white font-sans selection:bg-indigo-500/30 overflow-x-hidden">
       <style>{customStyles}</style>
 
       {/* --- CINEMATIC BACKGROUND SYSTEM --- */}
