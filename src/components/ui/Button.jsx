@@ -1,17 +1,13 @@
-export default function Button(props) {
-  const { children, primary, outline, ...rest } = props;
-
-  const base =
-    "px-6 py-3 rounded-lg text-sm font-medium transition";
-
-  const styles = primary
-    ? "bg-orange-500 hover:bg-orange-400 text-black"
-    : outline
-    ? "border border-neutral-700 hover:border-orange-500 text-white"
-    : "bg-neutral-800 hover:bg-neutral-700 text-white";
-
+export default function Button({ children, primary, outline, className }) {
   return (
-    <button className={`${base} ${styles}`} {...rest}>
+    <button
+      className={`
+        rounded-lg font-semibold transition-all duration-300
+        ${primary && "bg-orange-500 text-black hover:bg-orange-600"}
+        ${outline && "border border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-black"}
+        ${className}
+      `}
+    >
       {children}
     </button>
   );

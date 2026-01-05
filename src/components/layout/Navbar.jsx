@@ -6,8 +6,15 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
         {/* LOGO */}
-        <Link to="/" className="text-xl font-bold text-orange-400">
-          ZRYOSS
+        <Link to="/" className="flex items-center gap-2">
+          <img
+            src="/src/assets/image.jpg"
+            alt="Zryoss Logo"
+            className="h-20 w-auto object-contain"
+          />
+          <span className="text-xl font-bold text-white tracking-wide">
+            
+          </span>
         </Link>
 
         {/* DESKTOP NAV */}
