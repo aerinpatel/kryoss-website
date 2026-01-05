@@ -13,14 +13,14 @@ export default function FounderNote() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-3xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-3xl text-[var(--text-secondary)] text-lg">
             A message on intent, responsibility, and the long-term vision behind Zryoss.
           </p>
         </FadeUp>
 
         {/* NOTE CONTENT */}
         <FadeUp delay={0.3}>
-          <div className="mt-20 border border-[var(--border)] rounded-xl p-10 bg-[var(--bg-card)] space-y-6 text-[var(--text-muted)]">
+          <div className="mt-20 border border-[var(--border)] rounded-xl p-10 bg-[var(--bg-card)] space-y-6 text-[var(--text-secondary)]">
             <p>
               Zryoss was built to solve a recurring problem observed across
               businesses — strong sales capability without reliable execution,

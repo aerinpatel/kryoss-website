@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 mt-32">
-      <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-8 text-sm text-gray-400">
+      <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-8 text-sm text-[var(--text-secondary)]">
 
         <div>
-          <h4 className="text-orange-400 font-semibold mb-4">Zryoss</h4>
+          <h4 className="text-[var(--accent)] font-semibold mb-4">Zryoss</h4>
           <p>
             A business operating platform enabling scalable,
             execution-focused growth.
@@ -43,7 +43,7 @@ export default function Footer() {
 
       </div>
 
-      <div className="text-center text-xs text-gray-500 pb-6">
+      <div className="text-center text-xs text-[var(--text-muted)] pb-6">
         © {new Date().getFullYear()} Zryoss. All rights reserved.
       </div>
     </footer>

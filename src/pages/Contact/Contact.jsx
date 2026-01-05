@@ -14,7 +14,7 @@ export default function Contact() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-3xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-3xl text-[var(--text-secondary)] text-lg">
             Reach out to discuss business requirements, solutions, or
             platform-related enquiries.
           </p>

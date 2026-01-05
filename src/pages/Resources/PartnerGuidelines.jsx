@@ -13,7 +13,7 @@ export default function PartnerGuidelines() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-3xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-3xl text-[var(--text-secondary)] text-lg">
             These guidelines outline the expected conduct, communication
             standards, and operational responsibilities for all Zryoss partners.
           </p>
@@ -53,10 +53,10 @@ export default function PartnerGuidelines() {
           ].map((item, i) => (
             <FadeUp key={i} delay={i * 0.05}>
               <div className="border border-[var(--border)] rounded-xl p-8 bg-[var(--bg-card)]">
-                <h3 className="text-xl font-semibold text-orange-400">
+                <h3 className="text-xl font-semibold text-[var(--accent)]">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-[var(--text-muted)] text-sm">
+                <p className="mt-4 text-[var(--text-secondary)] text-sm">
                   {item.desc}
                 </p>
               </div>
@@ -67,7 +67,7 @@ export default function PartnerGuidelines() {
         {/* FINAL NOTE */}
         <FadeUp delay={0.4}>
           <div className="mt-24 border border-red-500/30 rounded-xl p-8 bg-gradient-to-r from-red-500/10 to-transparent">
-            <p className="text-[var(--text-muted)] text-sm">
+            <p className="text-[var(--text-secondary)] text-sm">
               Adherence to these guidelines is mandatory for continued
               association with the Zryoss platform.
             </p>

@@ -14,7 +14,7 @@ export default function Apply() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-4xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-4xl text-[var(--text-secondary)] text-lg">
             Zryoss partnerships are designed for individuals and organizations
             serious about building sustainable, sales-driven businesses.
           </p>
@@ -22,7 +22,7 @@ export default function Apply() {
 
         {/* DISCLAIMER */}
         <FadeUp delay={0.25}>
-          <div className="mt-12 border border-red-500/30 rounded-xl p-6 bg-red-500/10 text-sm text-[var(--text-muted)]">
+          <div className="mt-12 border border-red-500/30 rounded-xl p-6 bg-red-500/10 text-sm text-[var(--text-secondary)]">
             Zryoss is not a franchise, MLM, investment, or passive income
             opportunity. Applications are evaluated based on suitability and
             intent.

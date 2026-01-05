@@ -14,7 +14,7 @@ export default function BPP() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-3xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-3xl text-[var(--text-secondary)] text-lg">
             A Business Promotion Partner (BPP) is a sales-focused partner who
             promotes Zryoss services and earns only on successful business
             closures — without any recruitment or hierarchy-based income.
@@ -25,10 +25,10 @@ export default function BPP() {
         <div className="mt-24 grid md:grid-cols-2 gap-12">
           <FadeUp>
             <div className="border border-[var(--border)] rounded-xl p-8 bg-[var(--bg-card)]">
-              <h3 className="text-2xl font-semibold text-orange-400">
+              <h3 className="text-2xl font-semibold text-[var(--accent)]">
                 What a BPP Does
               </h3>
-              <ul className="mt-6 space-y-3 text-[var(--text-muted)]">
+              <ul className="mt-6 space-y-3 text-[var(--text-secondary)]">
                 <li>• Identifies potential clients</li>
                 <li>• Promotes Zryoss services</li>
                 <li>• Shares qualified leads</li>
@@ -44,7 +44,7 @@ export default function BPP() {
               <h3 className="text-2xl font-semibold text-red-400">
                 What a BPP Does NOT Do
               </h3>
-              <ul className="mt-6 space-y-3 text-[var(--text-muted)]">
+              <ul className="mt-6 space-y-3 text-[var(--text-secondary)]">
                 <li>• Does not manage service delivery</li>
                 <li>• Does not handle vendors</li>
                 <li>• Does not build downlines</li>
@@ -58,17 +58,17 @@ export default function BPP() {
         {/* EARNING LOGIC */}
         <FadeUp delay={0.35}>
           <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-[var(--bg-card)]">
-            <h3 className="text-3xl font-semibold text-orange-400">
+            <h3 className="text-3xl font-semibold text-[var(--accent)]">
               How BPP Earnings Work
             </h3>
 
-            <p className="mt-6 max-w-4xl text-[var(--text-muted)]">
+            <p className="mt-6 max-w-4xl text-[var(--text-secondary)]">
               BPP earnings are generated only when a referred or supported
               business deal is successfully closed and services are delivered.
               Earnings are directly linked to real sales contribution.
             </p>
 
-            <p className="mt-4 max-w-4xl text-[var(--text-muted)]">
+            <p className="mt-4 max-w-4xl text-[var(--text-secondary)]">
               There are no earnings from referrals alone, no recruitment-based
               incentives, and no income without actual business outcomes.
             </p>
@@ -77,12 +77,12 @@ export default function BPP() {
 
         {/* ANTI MLM BLOCK */}
         <FadeUp delay={0.5}>
-          <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-gradient-to-r from-orange-500/10 to-transparent">
+          <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-gradient-to-r from-[var(--accent)]/10 to-transparent">
             <h3 className="text-3xl font-semibold">
               Important Clarification
             </h3>
 
-            <ul className="mt-6 space-y-3 text-[var(--text-muted)] max-w-4xl">
+            <ul className="mt-6 space-y-3 text-[var(--text-secondary)] max-w-4xl">
               <li>• BPP is not a network marketing role</li>
               <li>• No earnings from recruiting others</li>
               <li>• No hierarchical or downline structure</li>

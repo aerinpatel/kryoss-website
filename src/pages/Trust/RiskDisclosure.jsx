@@ -13,7 +13,7 @@ export default function RiskDisclosure() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-4xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-4xl text-[var(--text-secondary)] text-lg">
             This page outlines potential risks associated with engaging with
             the Zryoss platform. It is intended to promote transparency and
             informed decision-making.
@@ -50,10 +50,10 @@ export default function RiskDisclosure() {
           ].map((item, i) => (
             <FadeUp key={i} delay={i * 0.1}>
               <div className="border border-[var(--border)] rounded-xl p-8 bg-[var(--bg-card)] h-full">
-                <h3 className="text-xl font-semibold text-orange-400">
+                <h3 className="text-xl font-semibold text-[var(--accent)]">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-[var(--text-muted)] text-sm">
+                <p className="mt-4 text-[var(--text-secondary)] text-sm">
                   {item.desc}
                 </p>
               </div>
@@ -64,7 +64,7 @@ export default function RiskDisclosure() {
         {/* FINAL DISCLAIMER */}
         <FadeUp delay={0.4}>
           <div className="mt-24 border border-red-500/30 rounded-xl p-10 bg-gradient-to-r from-red-500/10 to-transparent">
-            <p className="max-w-4xl text-[var(--text-muted)] text-sm">
+            <p className="max-w-4xl text-[var(--text-secondary)] text-sm">
               Zryoss does not provide any assurance of income, business success,
               or financial returns. Participation in the platform involves
               inherent risks, and individuals or organizations should evaluate

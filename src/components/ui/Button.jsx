@@ -7,7 +7,7 @@ export default function Button(props) {
   const styles = primary
     ? "bg-orange-500 hover:bg-orange-400 text-black"
     : outline
-    ? "border border-neutral-700 hover:border-orange-500 text-white"
+    ? "border border-neutral-700 hover:border-[var(--accent)] text-white"
     : "bg-neutral-800 hover:bg-neutral-700 text-white";
 
   return (
