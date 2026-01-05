@@ -14,7 +14,7 @@ export default function DemoSupport() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-3xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-3xl text-[var(--text-secondary)] text-lg">
             Zryoss provides centralized demo and pre-sales support to ensure
             consistent, professional, and accurate solution presentation
             across all business engagements.
@@ -51,10 +51,10 @@ export default function DemoSupport() {
           ].map((item, i) => (
             <FadeUp key={i} delay={i * 0.1}>
               <div className="border border-[var(--border)] rounded-xl p-8 bg-[var(--bg-card)] h-full">
-                <h3 className="text-xl font-semibold text-orange-400">
+                <h3 className="text-xl font-semibold text-[var(--accent)]">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-[var(--text-muted)] text-sm">
+                <p className="mt-4 text-[var(--text-secondary)] text-sm">
                   {item.desc}
                 </p>
               </div>
@@ -64,12 +64,12 @@ export default function DemoSupport() {
 
         {/* CTA */}
         <FadeUp delay={0.4}>
-          <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-gradient-to-r from-orange-500/10 to-transparent">
+          <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-gradient-to-r from-[var(--accent)]/10 to-transparent">
             <h3 className="text-3xl font-semibold">
               Why This Matters
             </h3>
 
-            <p className="mt-6 max-w-4xl text-[var(--text-muted)]">
+            <p className="mt-6 max-w-4xl text-[var(--text-secondary)]">
               Centralized pre-sales ensures clients receive accurate commitments,
               partners avoid over-promising, and delivery teams execute with clarity.
             </p>

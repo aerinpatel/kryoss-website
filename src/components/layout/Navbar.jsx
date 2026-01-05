@@ -2,16 +2,16 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur border-b border-white/10">
+    <header className="fixed top-0 w-full z-50 bg-[var(--bg-main)]/80 backdrop-blur border-b border-[var(--border)]/10">
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
         {/* LOGO */}
-        <Link to="/" className="text-xl font-bold text-orange-400">
+        <Link to="/" className="text-xl font-bold text-[var(--accent)]">
           ZRYOSS
         </Link>
 
         {/* DESKTOP NAV */}
-        <div className="hidden md:flex items-center gap-6 text-sm text-gray-300">
+        <div className="hidden md:flex items-center gap-6 text-sm text-[var(--text-main)]">
 
           <Link to="/platform">Platform</Link>
           <Link to="/ecosystem">Ecosystem</Link>
@@ -89,7 +89,7 @@ export default function Navbar() {
 function Dropdown({ children }) {
   return (
     <div className="absolute top-full left-0 mt-3 min-w-[220px]
-      bg-black border border-white/10 rounded-xl shadow-lg py-2
+      bg-[var(--bg-card)] border border-[var(--border)] rounded-xl shadow-lg py-2
       opacity-0 invisible group-hover:opacity-100 group-hover:visible
       transition-all duration-200 z-50">
       {children}
@@ -102,8 +102,8 @@ function NavItem({ to, children }) {
   return (
     <Link
       to={to}
-      className="block px-4 py-2 text-sm text-gray-300
-      hover:bg-orange-500/10 hover:text-orange-400"
+      className="block px-4 py-2 text-sm text-[var(--text-main)]
+      hover:bg-orange-500/10 hover:text-[var(--accent)]"
     >
       {children}
     </Link>

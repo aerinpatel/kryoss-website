@@ -13,7 +13,7 @@ export default function RiskControl() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-3xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-3xl text-[var(--text-secondary)] text-lg">
             Zryoss implements structured risk management and control mechanisms
             to protect clients, partners, vendors, and the platform across all
             business operations.
@@ -50,10 +50,10 @@ export default function RiskControl() {
           ].map((item, i) => (
             <FadeUp key={i} delay={i * 0.1}>
               <div className="border border-[var(--border)] rounded-xl p-8 bg-[var(--bg-card)] h-full">
-                <h3 className="text-xl font-semibold text-orange-400">
+                <h3 className="text-xl font-semibold text-[var(--accent)]">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-[var(--text-muted)] text-sm">
+                <p className="mt-4 text-[var(--text-secondary)] text-sm">
                   {item.desc}
                 </p>
               </div>
@@ -63,12 +63,12 @@ export default function RiskControl() {
 
         {/* CONTROL MECHANISMS */}
         <FadeUp delay={0.4}>
-          <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-gradient-to-r from-orange-500/10 to-transparent">
+          <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-gradient-to-r from-[var(--accent)]/10 to-transparent">
             <h3 className="text-3xl font-semibold">
               Control Mechanisms
             </h3>
 
-            <ul className="mt-6 space-y-3 text-[var(--text-muted)] max-w-4xl">
+            <ul className="mt-6 space-y-3 text-[var(--text-secondary)] max-w-4xl">
               <li>• Centralized operational oversight</li>
               <li>• Defined escalation and resolution processes</li>
               <li>• Vendor accountability and performance tracking</li>

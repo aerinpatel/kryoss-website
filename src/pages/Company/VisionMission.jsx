@@ -13,7 +13,7 @@ export default function VisionMission() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-3xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-3xl text-[var(--text-secondary)] text-lg">
             The long-term direction and purpose that guide Zryoss as a business
             operating platform.
           </p>
@@ -23,10 +23,10 @@ export default function VisionMission() {
         <div className="mt-24 grid md:grid-cols-2 gap-12">
           <FadeUp>
             <div className="border border-[var(--border)] rounded-xl p-10 bg-[var(--bg-card)] h-full">
-              <h2 className="text-3xl font-semibold text-orange-400">
+              <h2 className="text-3xl font-semibold text-[var(--accent)]">
                 Our Vision
               </h2>
-              <p className="mt-6 text-[var(--text-muted)]">
+              <p className="mt-6 text-[var(--text-secondary)]">
                 To build a scalable and trusted business operating platform
                 that enables individuals and organizations to create real,
                 sustainable businesses without operational complexity.
@@ -37,10 +37,10 @@ export default function VisionMission() {
           {/* MISSION */}
           <FadeUp delay={0.2}>
             <div className="border border-[var(--border)] rounded-xl p-10 bg-[var(--bg-card)] h-full">
-              <h2 className="text-3xl font-semibold text-orange-400">
+              <h2 className="text-3xl font-semibold text-[var(--accent)]">
                 Our Mission
               </h2>
-              <ul className="mt-6 space-y-3 text-[var(--text-muted)]">
+              <ul className="mt-6 space-y-3 text-[var(--text-secondary)]">
                 <li>• Centralize operations, delivery, and governance</li>
                 <li>• Enable sales-focused partners to grow responsibly</li>
                 <li>• Maintain quality, compliance, and accountability</li>
@@ -53,11 +53,11 @@ export default function VisionMission() {
 
         {/* GUIDING PRINCIPLES */}
         <FadeUp delay={0.4}>
-          <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-gradient-to-r from-orange-500/10 to-transparent">
+          <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-gradient-to-r from-[var(--accent)]/10 to-transparent">
             <h3 className="text-3xl font-semibold">
               Guiding Principles
             </h3>
-            <ul className="mt-6 space-y-3 text-[var(--text-muted)] max-w-4xl">
+            <ul className="mt-6 space-y-3 text-[var(--text-secondary)] max-w-4xl">
               <li>• Execution over promises</li>
               <li>• Transparency over hype</li>
               <li>• Structure over chaos</li>

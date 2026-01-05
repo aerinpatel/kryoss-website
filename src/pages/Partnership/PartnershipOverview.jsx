@@ -14,7 +14,7 @@ export default function PartnershipOverview() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-3xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-3xl text-[var(--text-secondary)] text-lg">
             Zryoss partnerships are designed for professionals who want to
             build real businesses — not passive income schemes, franchises,
             or referral networks.
@@ -25,10 +25,10 @@ export default function PartnershipOverview() {
         <div className="mt-24 grid md:grid-cols-2 gap-12">
           <FadeUp>
             <div className="border border-[var(--border)] rounded-xl p-8 bg-[var(--bg-card)]">
-              <h3 className="text-2xl font-semibold text-orange-400">
+              <h3 className="text-2xl font-semibold text-[var(--accent)]">
                 Who Should Join
               </h3>
-              <ul className="mt-6 space-y-3 text-[var(--text-muted)]">
+              <ul className="mt-6 space-y-3 text-[var(--text-secondary)]">
                 <li>• Sales professionals & consultants</li>
                 <li>• Agency owners & freelancers</li>
                 <li>• Founders looking to scale without operations</li>
@@ -43,7 +43,7 @@ export default function PartnershipOverview() {
               <h3 className="text-2xl font-semibold text-red-400">
                 Who Should NOT Join
               </h3>
-              <ul className="mt-6 space-y-3 text-[var(--text-muted)]">
+              <ul className="mt-6 space-y-3 text-[var(--text-secondary)]">
                 <li>• People looking for passive income</li>
                 <li>• Anyone expecting recruitment-based earnings</li>
                 <li>• Investors seeking guaranteed returns</li>
@@ -55,19 +55,19 @@ export default function PartnershipOverview() {
 
         {/* HOW PARTNERSHIP WORKS */}
         <FadeUp delay={0.35}>
-          <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-gradient-to-r from-orange-500/10 to-transparent">
+          <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-gradient-to-r from-[var(--accent)]/10 to-transparent">
             <h3 className="text-3xl font-semibold">
               How Partnership Actually Works
             </h3>
 
-            <p className="mt-6 max-w-4xl text-[var(--text-muted)]">
+            <p className="mt-6 max-w-4xl text-[var(--text-secondary)]">
               Partners operate under their own brand and focus on sales,
               business development, and client relationships. Zryoss
               centrally manages demos, delivery, vendors, quality control,
               and operational systems.
             </p>
 
-            <p className="mt-4 max-w-4xl text-[var(--text-muted)]">
+            <p className="mt-4 max-w-4xl text-[var(--text-secondary)]">
               Earnings are directly linked to successful business closures
               and service delivery — not recruitment, referrals, or network
               building.

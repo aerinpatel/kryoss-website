@@ -44,7 +44,7 @@ export default function FAQs() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-3xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-3xl text-[var(--text-secondary)] text-lg">
             Clear answers to common questions about Zryoss, its platform,
             partnerships, and operations.
           </p>
@@ -55,10 +55,10 @@ export default function FAQs() {
           {faqs.map((item, i) => (
             <FadeUp key={i} delay={i * 0.05}>
               <div className="border border-[var(--border)] rounded-xl p-6 bg-[var(--bg-card)]">
-                <h3 className="text-lg font-semibold text-orange-400">
+                <h3 className="text-lg font-semibold text-[var(--accent)]">
                   {item.q}
                 </h3>
-                <p className="mt-3 text-[var(--text-muted)] text-sm">
+                <p className="mt-3 text-[var(--text-secondary)] text-sm">
                   {item.a}
                 </p>
               </div>

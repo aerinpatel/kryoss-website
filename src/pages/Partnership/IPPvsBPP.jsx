@@ -14,7 +14,7 @@ export default function IPPvsBPP() {
         </FadeUp>
 
         <FadeUp delay={0.15}>
-          <p className="mt-6 max-w-3xl text-[var(--text-muted)] text-lg">
+          <p className="mt-6 max-w-3xl text-[var(--text-secondary)] text-lg">
             Zryoss offers two partnership models designed for different
             professional goals. This comparison helps you choose the
             right path based on responsibility and involvement.
@@ -28,10 +28,10 @@ export default function IPPvsBPP() {
               <thead className="bg-[var(--bg-card)]">
                 <tr>
                   <th className="p-4 text-left">Criteria</th>
-                  <th className="p-4 text-left text-orange-400">
+                  <th className="p-4 text-left text-[var(--accent)]">
                     IPP (Independent Profit Partner)
                   </th>
-                  <th className="p-4 text-left text-orange-400">
+                  <th className="p-4 text-left text-[var(--accent)]">
                     BPP (Business Promotion Partner)
                   </th>
                 </tr>
@@ -81,13 +81,13 @@ export default function IPPvsBPP() {
                   ],
                 ].map((row, i) => (
                   <tr key={i} className="bg-[var(--bg-main)]">
-                    <td className="p-4 text-[var(--text-muted)]">
+                    <td className="p-4 text-[var(--text-secondary)]">
                       {row[0]}
                     </td>
-                    <td className="p-4 text-[var(--text-muted)]">
+                    <td className="p-4 text-[var(--text-secondary)]">
                       {row[1]}
                     </td>
-                    <td className="p-4 text-[var(--text-muted)]">
+                    <td className="p-4 text-[var(--text-secondary)]">
                       {row[2]}
                     </td>
                   </tr>
@@ -99,12 +99,12 @@ export default function IPPvsBPP() {
 
         {/* DECISION GUIDANCE */}
         <FadeUp delay={0.4}>
-          <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-gradient-to-r from-orange-500/10 to-transparent">
+          <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-gradient-to-r from-[var(--accent)]/10 to-transparent">
             <h3 className="text-3xl font-semibold">
               How to Decide
             </h3>
 
-            <p className="mt-6 max-w-4xl text-[var(--text-muted)]">
+            <p className="mt-6 max-w-4xl text-[var(--text-secondary)]">
               Choose IPP if you want to build and scale a full business with
               long-term responsibility and leadership. Choose BPP if you
               prefer a focused sales role without operational ownership.
