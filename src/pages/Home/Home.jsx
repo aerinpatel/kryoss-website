@@ -3,7 +3,6 @@ import WhatIsNot from "./WhatIsNot";
 import HowItWorks from "./HowItWorks";
 import Brands from "./Brands";
 import CTA from "./CTA";
-import Footer from "../../components/layout/Footer";
 
 export default function Home() {
   return (
@@ -12,7 +11,6 @@ export default function Home() {
       <HowItWorks />
       <Brands />
       <CTA />
-      <div className="-mb-120"></div>
     </>
   );
 }

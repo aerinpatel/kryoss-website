@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, MessageSquare, ShieldCheck } from 'lucide-react';
-import Footer from '../../components/layout/Footer';
 
 /**
  * Custom Animation Component
@@ -87,7 +86,6 @@ export default function CTA() {
         <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-orange-600/10 rounded-full blur-[100px] pointer-events-none z-0" />
         <div className="absolute -top-20 -right-20 w-64 h-64 bg-orange-600/10 rounded-full blur-[100px] pointer-events-none z-0" />
       </div>
-      <Footer/>
     </section>
   );
 }
