@@ -5,9 +5,7 @@ const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
+    transition: { staggerChildren: 0.15 },
   },
 };
 
@@ -19,13 +17,12 @@ const item = {
 export default function About() {
   return (
     <section className="relative py-28 bg-[#0F172A] overflow-hidden">
-      {/* Glow */}
+      {/* Ambient Glow */}
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-orange-500/20 blur-[140px]" />
 
       <div className="relative max-w-7xl mx-auto px-6">
-        {/* =====================================================
-            HEADER
-        ====================================================== */}
+
+        {/* ================= HEADER ================= */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -33,23 +30,17 @@ export default function About() {
           viewport={{ once: true }}
           className="max-w-4xl"
         >
-          <motion.h2
-            variants={item}
-            className="text-4xl md:text-5xl font-bold text-white"
-          >
+          <motion.h2 variants={item} className="text-4xl md:text-5xl font-bold text-white">
             Why <span className="text-orange-500">Zryoss</span>
           </motion.h2>
 
           <motion.p variants={item} className="mt-6 text-gray-400 text-lg">
-            Zryoss is a structured business enablement platform built to help
-            individuals and organizations operate, scale, and grow with clarity,
-            discipline, and confidence.
+            Zryoss is a structured business enablement platform designed to help
+            organizations operate, scale, and grow with clarity, discipline, and confidence.
           </motion.p>
         </motion.div>
 
-        {/* =====================================================
-            WHY ZRYOSS – CORE VALUE
-        ====================================================== */}
+        {/* ================= CORE VALUE ================= */}
         <div className="mt-24 grid lg:grid-cols-2 gap-16 items-center">
           {/* TEXT */}
           <motion.div
@@ -62,24 +53,20 @@ export default function About() {
             {[
               {
                 title: "Structured Business Enablement",
-                desc: "Operational frameworks that eliminate chaos and replace it with clarity and repeatability.",
+                desc: "Operational frameworks that replace chaos with clarity and repeatability.",
               },
               {
                 title: "Centralized Governance",
-                desc: "Systems, quality standards, and accountability managed centrally for consistent execution.",
+                desc: "Quality standards and accountability managed centrally for consistent execution.",
               },
               {
                 title: "Built for Long-Term Success",
-                desc: "Sustainable, ethical, and scalable growth — no shortcuts or fragile models.",
+                desc: "Ethical, sustainable, and scalable growth — no shortcuts.",
               },
-            ].map((itemData, i) => (
+            ].map((data, i) => (
               <motion.div key={i} variants={item}>
-                <h4 className="text-xl font-semibold text-orange-400">
-                  {itemData.title}
-                </h4>
-                <p className="mt-2 text-gray-300 leading-relaxed">
-                  {itemData.desc}
-                </p>
+                <h4 className="text-xl font-semibold text-orange-400">{data.title}</h4>
+                <p className="mt-2 text-gray-300 leading-relaxed">{data.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -101,9 +88,7 @@ export default function About() {
           </motion.div>
         </div>
 
-        {/* =====================================================
-            WHAT WE DO
-        ====================================================== */}
+        {/* ================= WHAT WE DO ================= */}
         <div className="mt-32 grid lg:grid-cols-2 gap-16 items-center">
           <motion.img
             initial={{ opacity: 0, x: -40 }}
@@ -135,10 +120,10 @@ export default function About() {
           </motion.div>
         </div>
 
-        {/* =====================================================
-            WHAT WE DON’T DO
-        ====================================================== */}
+        {/* ================= WHAT WE DON’T DO (FIXED IMAGE) ================= */}
         <div className="mt-32 grid lg:grid-cols-2 gap-16 items-center">
+
+          {/* TEXT CARD */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -158,70 +143,58 @@ export default function About() {
             </ul>
           </motion.div>
 
-          <motion.img
-            initial={{ opacity: 0, x: 20 }}
+          {/* PROFESSIONAL IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c"
-            className="rounded-2xl shadow-xl"
-            alt="What we don’t do"
-          />
+            className="relative flex justify-center"
+          >
+            {/* Soft red glow */}
+            <div className="absolute inset-0 bg-red-500/10 blur-3xl rounded-2xl" />
+
+            <div className="relative w-full max-w-md overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
+              <img
+                src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c"
+                alt="What we don’t do"
+                className="w-full h-[340px] object-cover scale-[1.05]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+            </div>
+          </motion.div>
         </div>
 
-        {/* =====================================================
-            FINAL CTA
-        ====================================================== */}
+        {/* ================= FINAL CTA ================= */}
         <motion.div
           initial={{ opacity: 0, y: 40, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          transition={{ duration: 0.7 }}
           className="relative mt-28 max-w-3xl mx-auto text-center 
-             bg-white/5 border border-orange-500/30 
-             rounded-2xl p-10 backdrop-blur-md overflow-hidden"
+                     bg-white/5 border border-orange-500/30 
+                     rounded-2xl p-10 backdrop-blur-md"
         >
-          {/* Animated Glow */}
-          <motion.div
-            animate={{ opacity: [0.3, 0.6, 0.3] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute inset-0 bg-orange-500/10 blur-3xl rounded-2xl"
-          />
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            Build with clarity. Scale with confidence.
+          </h3>
 
-          {/* Content */}
-          <div className="relative z-10">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Build with clarity. Scale with confidence.
-            </h3>
+          <p className="text-gray-400 mb-8">
+            Zryoss provides the structure and governance modern businesses need
+            to grow responsibly and sustainably.
+          </p>
 
-            <p className="text-gray-400 mb-8">
-              Zryoss provides the structure and governance modern businesses
-              need to grow responsibly and sustainably.
-            </p>
-
-            {/* Animated Button */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              className="group inline-flex items-center gap-2 
-                 px-10 py-4 bg-orange-500 text-black 
-                 font-semibold rounded-xl 
-                 hover:bg-orange-600 
-                 hover:shadow-[0_0_30px_rgba(249,115,22,0.5)]
-                 transition-all duration-300"
-            >
-              Start Your Journey
-              <motion.span
-                initial={{ x: 0 }}
-                whileHover={{ x: 6 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="inline-block"
-              >
-                →
-              </motion.span>
-            </motion.button>
-          </div>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            className="px-10 py-4 bg-orange-500 text-black font-semibold rounded-xl
+                       hover:bg-orange-600 hover:shadow-[0_0_30px_rgba(249,115,22,0.5)]
+                       transition-all"
+          >
+            Start Your Journey →
+          </motion.button>
         </motion.div>
+
       </div>
     </section>
   );
