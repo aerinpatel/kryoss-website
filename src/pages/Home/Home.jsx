@@ -12,7 +12,7 @@ export default function Home() {
       <HowItWorks />
       <Brands />
       <CTA />
-      <div className="-mb-120"></div>
+      <div className="-mb-240"></div>
     </>
   );
 }
