@@ -4,34 +4,35 @@ export default function DigitalMarketing() {
   return (
     <SolutionLayout
       title="Digital Marketing Solutions"
-      subtitle="Data-driven marketing strategies designed for sustainable business growth."
-      description="Zryoss delivers structured and performance-oriented digital marketing
-      solutions that help organizations strengthen their online presence,
-      acquire customers, and build long-term brand value."
+      subtitle="Structured, performance-driven marketing for modern businesses."
+      description="Zryoss delivers disciplined and ROI-focused digital marketing
+      solutions designed for entrepreneurs and growing companies who need
+      clarity, execution, and measurable growth — not bloated agency retainers."
+      heroImage="https://images.unsplash.com/photo-1557838923-2985c318be48"
       offerings={[
         {
           title: "Search Engine Optimization (SEO)",
-          desc: "Technical and content-driven SEO strategies for long-term visibility.",
+          desc: "Technical and content-driven SEO strategies that compound visibility over time.",
         },
         {
           title: "Performance Marketing",
-          desc: "Paid advertising across search and social platforms with ROI focus.",
+          desc: "ROI-focused paid campaigns across search and social platforms.",
         },
         {
           title: "Social Media Management",
-          desc: "Brand positioning and engagement across major social platforms.",
+          desc: "Consistent brand presence and engagement across major platforms.",
         },
         {
           title: "Content Marketing",
-          desc: "High-quality content aligned with business and customer goals.",
+          desc: "Content systems aligned with customer journeys and business goals.",
         },
         {
           title: "Branding & Creative",
-          desc: "Visual identity, campaigns, and creative assets for digital channels.",
+          desc: "Clear messaging, visual identity, and campaign creatives.",
         },
         {
           title: "Analytics & Reporting",
-          desc: "Transparent performance tracking and data-driven insights.",
+          desc: "Transparent tracking, insights, and performance dashboards.",
         },
       ]}
     />

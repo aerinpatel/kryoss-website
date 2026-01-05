@@ -50,7 +50,7 @@ export default function Navbar() {
           {/* DESKTOP DROPDOWNS */}
           <DesktopDropdown label="Solutions">
             <NavItem to="/solutions/it-software">IT & Software</NavItem>
-            <NavItem to="/solutions/hr">HR & Recruitment</NavItem>
+            <NavItem to="/solutions/hr-recruitment">HR & Recruitment</NavItem>
             <NavItem to="/solutions/digital-marketing">Digital Marketing</NavItem>
             <NavItem to="/solutions/payroll">Payroll</NavItem>
             <NavItem to="/solutions/legal">Legal</NavItem>
@@ -129,7 +129,7 @@ export default function Navbar() {
               onClick={() => toggleMobileDropdown('solutions')}
             >
               <NavItem to="/solutions/it-software">IT & Software</NavItem>
-              <NavItem to="/solutions/hr">HR & Recruitment</NavItem>
+              <NavItem to="/solutions/hr-recruitment">HR & Recruitment</NavItem>
               <NavItem to="/solutions/digital-marketing">Digital Marketing</NavItem>
               <NavItem to="/solutions/payroll">Payroll</NavItem>
               <NavItem to="/solutions/legal">Legal</NavItem>
