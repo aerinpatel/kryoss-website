@@ -78,9 +78,53 @@ export default function PartnershipOverview() {
               <Button outline>Talk to Zryoss Team</Button>
             </div>
           </div>
-        </FadeUp>
 
-      </div>
-    </section>
+          <h3
+            className="mt-6 text-xl font-semibold text-white
+                       group-hover:text-orange-400 transition"
+          >
+            {item.title}
+          </h3>
+
+          <p className="mt-3 text-gray-300 text-sm leading-relaxed">
+            {item.desc}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    {/* Footer credibility line */}
+    <p className="mt-16 text-xs text-gray-500 max-w-2xl">
+      This workflow is applied consistently across technology, legal, and
+      infrastructure engagements to ensure execution clarity and governance.
+    </p>
+  </div>
+</section>
+
+
+      {/* =====================================================
+          CTA
+      ====================================================== */}
+      <section className="py-32 text-center">
+        <div className="max-w-4xl mx-auto px-6 rounded-3xl
+                        border border-orange-500/30 bg-white/5 p-14">
+          <h2 className="text-4xl font-bold mb-6">
+            Build with clarity. <br />
+            <span className="text-orange-500">Scale with confidence.</span>
+          </h2>
+
+          <p className="text-gray-300 mb-10">
+            Talk to Kryoss about structured execution for your business.
+          </p>
+
+          <button className="inline-flex items-center gap-2 px-10 py-4
+                             bg-orange-500 text-black font-semibold
+                             rounded-xl hover:bg-orange-600 transition">
+            Talk to Kryoss <ArrowRight />
+          </button>
+        </div>
+      </section>
+
+    </div>
   );
 }
