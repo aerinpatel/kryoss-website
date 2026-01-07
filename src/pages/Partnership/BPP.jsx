@@ -655,7 +655,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer
       <footer className="bg-black py-16 px-6 border-t border-neutral-900">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-center md:text-left">
@@ -673,7 +673,7 @@ export default function App() {
             © 2025 Zryoss BPP. All rights reserved.
           </div>
         </div>
-      </footer>
+      </footer> */}
       
       <style>{`
         @keyframes marquee {
