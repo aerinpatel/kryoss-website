@@ -79,7 +79,7 @@ export default function FAQs() {
 
         <div className="relative space-y-6">
           {faqs.map((item, i) => {
-            const open = active === i;
+            const open = true;
 
             return (
               <FadeUp key={i} delay={i * 0.05}>
@@ -103,7 +103,6 @@ export default function FAQs() {
 
                   {/* Question */}
                   <button
-                    onClick={() => setActive(open ? null : i)}
                     className="w-full px-8 py-6 flex justify-between items-center
                                text-left focus:outline-none"
                   >

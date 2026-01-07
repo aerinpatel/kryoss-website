@@ -67,19 +67,15 @@ const AnimatedSection = ({ children, delay = 0, className = "" }) => {
   );
 };
 
-const FAQItem = ({ question, answer, isOpen, onClick }) => {
+const FAQItem = ({ question, answer, isOpen }) => {
   return (
     <div className="border-b border-white/10 last:border-0">
       <button
-        onClick={onClick}
         className="w-full py-6 flex items-center justify-between text-left group"
       >
         <span className={`text-lg font-medium transition-colors ${isOpen ? 'text-orange-500' : 'text-white group-hover:text-orange-400'}`}>
           {question}
         </span>
-        <div className={`p-2 rounded-full transition-all ${isOpen ? 'bg-orange-600 rotate-180' : 'bg-white/5 group-hover:bg-white/10'}`}>
-          {isOpen ? <Minus size={16} /> : <Plus size={16} />}
-        </div>
       </button>
       <div
         className={`grid transition-[grid-template-rows] duration-500 ease-out ${
@@ -516,7 +512,7 @@ export default function App() {
       <section className="min-h-screen flex flex-col justify-center py-20 px-6">
         <div className="max-w-3xl mx-auto w-full">
           <AnimatedSection className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Common Questions</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Frequently Asked Questions</h2>
           </AnimatedSection>
 
           <div className="bg-white/5 rounded-3xl p-8 md:p-12 border border-white/5">
@@ -542,8 +538,7 @@ export default function App() {
                 <FAQItem 
                   question={faq.question} 
                   answer={faq.answer} 
-                  isOpen={openFaqIndex === i}
-                  onClick={() => setOpenFaqIndex(openFaqIndex === i ? -1 : i)}
+                  isOpen={true}
                 />
               </AnimatedSection>
             ))}
