@@ -155,7 +155,7 @@ export default function Blog() {
                   <button
                     type="submit"
                     className="px-8 py-4 rounded-xl bg-orange-500 
-                               text-black font-semibold
+                               text-white font-semibold
                                hover:bg-orange-600
                                hover:shadow-[0_0_30px_rgba(249,115,22,0.45)]
                                transition"

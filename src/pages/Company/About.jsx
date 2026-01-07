@@ -138,7 +138,7 @@ export default function About() {
                 px-10
                 py-4
                 bg-orange-500
-                text-black
+                text-white
                 font-semibold
                 rounded-xl
                 hover:bg-orange-600

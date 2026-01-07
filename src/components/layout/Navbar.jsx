@@ -90,7 +90,7 @@ export default function Navbar() {
           </Link>
           <Link
             to="/apply"
-            className="px-4 py-2 text-sm bg-orange-500 text-black font-semibold rounded-lg hover:bg-orange-600 transition-all"
+            className="px-4 py-2 text-sm bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-all"
           >
             Apply
           </Link>
@@ -176,7 +176,7 @@ export default function Navbar() {
             <Link to="/contact" className="w-full py-3.5 text-center border border-white/20 rounded-xl text-base font-medium active:scale-95 transition-transform">
               Contact Us
             </Link>
-            <Link to="/apply" className="w-full py-3.5 text-center bg-orange-500 text-black rounded-xl text-base font-bold active:scale-95 transition-transform shadow-[0_4px_20px_rgba(249,115,22,0.3)]">
+            <Link to="/apply" className="w-full py-3.5 text-center bg-orange-500 text-white rounded-xl text-base font-bold active:scale-95 transition-transform shadow-[0_4px_20px_rgba(249,115,22,0.3)]">
               Apply Now
             </Link>
           </div>

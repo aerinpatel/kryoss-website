@@ -60,7 +60,7 @@ export default function CTA() {
                 {/* Primary Action Button */}
                 <button 
                   type="button"
-                  className="group relative px-8 py-5 bg-orange-600 hover:bg-orange-500 text-black font-bold rounded-2xl transition-all duration-300 flex items-center gap-3 overflow-hidden shadow-[0_0_30px_rgba(234,88,12,0.2)]"
+                  className="group relative px-8 py-5 bg-orange-600 hover:bg-orange-500 text-white font-bold rounded-2xl transition-all duration-300 flex items-center gap-3 overflow-hidden shadow-[0_0_30px_rgba(234,88,12,0.2)]"
                 >
                   <span className="relative z-10 uppercase text-xs tracking-widest">
                     Apply as Partner

@@ -84,8 +84,6 @@ export default function AppRoutes() {
       <Route path="/apply" element={<Apply />} />
       <Route path="/ecosystem" element={<Ecosystem />} />
 
-
-
     </Routes>
   );
 }
