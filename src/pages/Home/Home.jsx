@@ -11,6 +11,10 @@ export default function Home() {
       <HowItWorks />
       <Brands />
       <CTA />
+<<<<<<< HEAD
+=======
+      <div className="-mb-240"></div>
+>>>>>>> e42b0fa813462651542affaa1c0c5bed094232a0
     </>
   );
 }

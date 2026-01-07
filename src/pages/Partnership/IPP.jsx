@@ -17,6 +17,7 @@ import {
   Plus,
   Minus,
   Globe,
+<<<<<<< HEAD
   Code2,
   Server,
   ShieldCheck,
@@ -24,6 +25,9 @@ import {
   Fingerprint,
   Quote,
   Star
+=======
+  Image as ImageIcon
+>>>>>>> e42b0fa813462651542affaa1c0c5bed094232a0
 } from 'lucide-react';
 
 /* --- Hooks & Utility Components --- */
@@ -104,6 +108,7 @@ export default function KryossIPP() {
     'NextGen', 'SmartHub', 'ProSystems', 'FutureTech', 'Quantum'
   ];
 
+<<<<<<< HEAD
   const testimonials = [
     {
       name: "David Chen",
@@ -128,6 +133,8 @@ export default function KryossIPP() {
     }
   ];
 
+=======
+>>>>>>> e42b0fa813462651542affaa1c0c5bed094232a0
   const handleSubmit = (e) => {
     e.preventDefault();
     const btn = e.target;
@@ -137,6 +144,7 @@ export default function KryossIPP() {
   };
 
   const industries = [
+<<<<<<< HEAD
     { icon: Stethoscope, name: "Healthcare IT", img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600" },
     { icon: Plane, name: "Travel Tech", img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=600" },
     { icon: Landmark, name: "Fintech", img: "/finance image.webp" },
@@ -174,6 +182,14 @@ export default function KryossIPP() {
       icon: Server,
       detail: "Full Documentation"
     }
+=======
+    { icon: Stethoscope, name: "Healthcare", img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600" },
+    { icon: Plane, name: "Travel", img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=600" },
+    { icon: Landmark, name: "Finance", img: "/finance image.webp" },
+    { icon: Truck, name: "Logistics", img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=600" },
+    { icon: Film, name: "Media", img: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=600" },
+    { icon: GraduationCap, name: "Education", img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600" }
+>>>>>>> e42b0fa813462651542affaa1c0c5bed094232a0
   ];
 
   return (
@@ -185,6 +201,7 @@ export default function KryossIPP() {
       </div>
 
       {/* Hero Section */}
+<<<<<<< HEAD
       <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <div className="w-full h-full bg-[#0a0a0a] flex flex-col items-center justify-center border-b border-white/5 relative">
@@ -198,6 +215,23 @@ export default function KryossIPP() {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10 w-full">
+=======
+      <section className="relative min-h-[90vh] flex items-center justify-center px-6 overflow-hidden">
+        {/* Banner Image Placeholder Area */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          {/* REPLACE THIS DIV WITH YOUR <img /> TAG 
+            Example: <img src="your-banner.jpg" className="w-full h-full object-cover" />
+          */}
+          <div className="w-full h-full bg-[#0a0a0a] flex flex-col items-center justify-center border-b border-white/5 relative">
+             <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
+             <div className="flex flex-col items-center gap-4  group">
+                <img src='/Gemini_Generated_Image_3ymxjt3ymxjt3ymx.png' />
+             </div>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10 w-full pt-20">
+>>>>>>> e42b0fa813462651542affaa1c0c5bed094232a0
           <AnimatedSection>
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-8 hover:bg-white/10 transition-colors cursor-default">
@@ -213,7 +247,11 @@ export default function KryossIPP() {
               </h1>
               
               <p className="text-xl md:text-2xl text-neutral-400 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
+<<<<<<< HEAD
                 Scale your agency without the technical overhead. We provide the engine, you drive the business.
+=======
+                Scale your business without the technical overhead. Deliver world-class solutions while maintaining full control.
+>>>>>>> e42b0fa813462651542affaa1c0c5bed094232a0
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -231,8 +269,13 @@ export default function KryossIPP() {
       </section>
 
       {/* Overview Section - Split Layout */}
+<<<<<<< HEAD
       <section className="min-h-screen flex flex-col justify-center py-20 px-6 relative z-10">
         <div className="max-w-7xl mx-auto w-full">
+=======
+      <section className="py-32 px-6 relative z-10">
+        <div className="max-w-7xl mx-auto">
+>>>>>>> e42b0fa813462651542affaa1c0c5bed094232a0
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
               <div className="relative rounded-2xl overflow-hidden aspect-[4/5] lg:aspect-square group shadow-2xl">
@@ -245,7 +288,11 @@ export default function KryossIPP() {
                 <div className="absolute bottom-8 left-8 right-8">
                   <div className="p-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl">
                     <div className="text-3xl font-bold text-white mb-1">100+</div>
+<<<<<<< HEAD
                     <div className="text-sm text-neutral-300">Active Agencies Supported</div>
+=======
+                    <div className="text-sm text-neutral-300">Active Partners Worldwide</div>
+>>>>>>> e42b0fa813462651542affaa1c0c5bed094232a0
                   </div>
                 </div>
               </div>
@@ -277,6 +324,7 @@ export default function KryossIPP() {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Why Join Us - Beautiful Data Cards */}
       <section className="min-h-screen flex flex-col justify-center py-20 px-6 bg-[#080808] relative">
         <div className="max-w-7xl mx-auto w-full">
@@ -288,10 +336,24 @@ export default function KryossIPP() {
               </div>
               <a href="#contact" className="px-6 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-orange-600 hover:border-orange-600 text-white transition-all flex items-center gap-2">
                 <span>Join Program</span> <ArrowRight size={16} />
+=======
+      {/* Why Join Us - Cards */}
+      <section className="py-32 px-6 bg-[#0a0a0a] relative">
+        <div className="max-w-7xl mx-auto">
+          <AnimatedSection className="mb-20">
+            <div className="flex flex-col md:flex-row justify-between items-end gap-8 border-b border-neutral-800 pb-8">
+              <div className="max-w-2xl">
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Become a Partner?</h2>
+                <p className="text-neutral-400 text-lg">Unlock specific advantages designed to accelerate your agency's growth.</p>
+              </div>
+              <a href="#contact" className="text-orange-500 font-medium flex items-center gap-2 hover:gap-4 transition-all">
+                Join the program <ArrowRight size={18} />
+>>>>>>> e42b0fa813462651542affaa1c0c5bed094232a0
               </a>
             </div>
           </AnimatedSection>
 
+<<<<<<< HEAD
           <div className="grid lg:grid-cols-3 gap-6">
             {[
               {
@@ -313,10 +375,26 @@ export default function KryossIPP() {
                   { label: "Hiring Time", value: "0 Days" }
                 ],
                 color: "text-blue-400"
+=======
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Building2,
+                title: "Total Brand Control",
+                description: "Your clients see only you. We operate silently in the background, ensuring your brand equity grows with every successful delivery.",
+                img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"
+              },
+              {
+                icon: Target,
+                title: "Zero Risk Entry",
+                description: "Start immediately without capital expenditure. No need to hire expensive technical teams or lease office space for developers.",
+                img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+>>>>>>> e42b0fa813462651542affaa1c0c5bed094232a0
               },
               {
                 icon: Globe,
                 title: "Global Infrastructure",
+<<<<<<< HEAD
                 desc: "Leverage our distributed network of developers and battle-tested systems from day one.",
                 metrics: [
                   { label: "Resources", value: "500+" },
@@ -350,6 +428,26 @@ export default function KryossIPP() {
                         </div>
                       ))}
                     </div>
+=======
+                description: "Leverage our distributed network of developers and battle-tested systems from day one. Scale up or down instantly.",
+                img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+              }
+            ].map((item, i) => (
+              <AnimatedSection key={i} delay={i * 100}>
+                <div className="group relative h-96 rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800">
+                  <div className="absolute inset-0">
+                    <img src={item.img} alt={item.title} className="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/80 to-black" />
+                  </div>
+                  <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                    <div className="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-6 text-white shadow-lg group-hover:-translate-y-2 transition-transform duration-300">
+                      <item.icon size={24} />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3 text-white">{item.title}</h3>
+                    <p className="text-neutral-400 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0 h-0 group-hover:h-auto overflow-hidden">
+                      {item.description}
+                    </p>
+>>>>>>> e42b0fa813462651542affaa1c0c5bed094232a0
                   </div>
                 </div>
               </AnimatedSection>
@@ -358,6 +456,7 @@ export default function KryossIPP() {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Workflow Section - Pipeline Design */}
       <section className="min-h-screen flex flex-col justify-center py-20 px-6 relative z-10 bg-[#050505] overflow-hidden">
         <div className="max-w-7xl mx-auto w-full relative">
@@ -410,6 +509,12 @@ export default function KryossIPP() {
       <section className="py-32 px-6 relative z-10 bg-neutral-950">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
+=======
+      {/* Checklist Section */}
+      <section className="py-32 px-6 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-20">
+>>>>>>> e42b0fa813462651542affaa1c0c5bed094232a0
             <AnimatedSection>
               <h2 className="text-4xl md:text-5xl font-bold mb-8">We Handle The Code.<br/>You Handle The Business.</h2>
               <p className="text-neutral-400 text-lg mb-12 font-light">
@@ -425,7 +530,11 @@ export default function KryossIPP() {
                   "24/7 Maintenance & support teams",
                   "Security & compliance audits"
                 ].map((item, i) => (
+<<<<<<< HEAD
                   <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-neutral-900/50 border border-white/5 hover:bg-neutral-900 hover:border-orange-500/30 transition-all group">
+=======
+                  <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-orange-500/30 transition-all group">
+>>>>>>> e42b0fa813462651542affaa1c0c5bed094232a0
                     <div className="w-8 h-8 rounded-full bg-orange-600/20 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-600 transition-colors">
                       <CheckCircle2 className="text-orange-500 group-hover:text-white" size={16} />
                     </div>
@@ -437,11 +546,19 @@ export default function KryossIPP() {
             
             <AnimatedSection delay={200} className="relative">
               <div className="sticky top-32">
+<<<<<<< HEAD
                  <div className="relative rounded-2xl overflow-hidden aspect-[3/4] border border-white/10 shadow-2xl bg-neutral-900">
                     <img 
                       src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000" 
                       alt="Coding Interface" 
                       className="w-full h-full object-cover opacity-60"
+=======
+                 <div className="relative rounded-2xl overflow-hidden aspect-[3/4] border border-white/10 shadow-2xl">
+                    <img 
+                      src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000" 
+                      alt="Coding Interface" 
+                      className="w-full h-full object-cover"
+>>>>>>> e42b0fa813462651542affaa1c0c5bed094232a0
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
                     <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -452,6 +569,7 @@ export default function KryossIPP() {
                                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"/> OPERATIONAL
                              </span>
                           </div>
+<<<<<<< HEAD
                           <div className="space-y-4">
                              <div className="space-y-2">
                                <div className="flex justify-between text-xs text-neutral-300">
@@ -470,6 +588,15 @@ export default function KryossIPP() {
                                <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
                                   <div className="h-full w-[98%] bg-green-500 rounded-full" />
                                </div>
+=======
+                          <div className="space-y-2">
+                             <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div className="h-full w-3/4 bg-orange-500 rounded-full" />
+                             </div>
+                             <div className="flex justify-between text-xs text-neutral-400 font-mono">
+                                <span>Project Delivery</span>
+                                <span>98% On Time</span>
+>>>>>>> e42b0fa813462651542affaa1c0c5bed094232a0
                              </div>
                           </div>
                        </div>
@@ -481,6 +608,7 @@ export default function KryossIPP() {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Testimonials Section */}
       <section className="min-h-screen flex flex-col justify-center py-24 px-6 relative overflow-hidden bg-neutral-950">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
@@ -538,6 +666,18 @@ export default function KryossIPP() {
             </p>
           </AnimatedSection>
 
+=======
+      {/* Industries - Image Grid */}
+      <section className="py-32 px-6 bg-[#0a0a0a]">
+        <div className="max-w-7xl mx-auto">
+          <AnimatedSection className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Industries We Serve</h2>
+            <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
+              Our expertise spans across critical sectors, delivering compliant and cutting-edge solutions.
+            </p>
+          </AnimatedSection>
+
+>>>>>>> e42b0fa813462651542affaa1c0c5bed094232a0
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {industries.map((industry, i) => (
               <AnimatedSection key={i} delay={i * 50}>
@@ -585,8 +725,13 @@ export default function KryossIPP() {
       </section>
 
       {/* FAQ */}
+<<<<<<< HEAD
       <section className="min-h-screen flex flex-col justify-center py-20 px-6">
         <div className="max-w-4xl mx-auto w-full">
+=======
+      <section className="py-32 px-6">
+        <div className="max-w-4xl mx-auto">
+>>>>>>> e42b0fa813462651542affaa1c0c5bed094232a0
           <AnimatedSection className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Common Questions</h2>
           </AnimatedSection>
@@ -624,8 +769,13 @@ export default function KryossIPP() {
       </section>
 
       {/* Contact Section */}
+<<<<<<< HEAD
       <section id="contact" className="min-h-screen flex flex-col justify-center py-20 px-6 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto w-full">
+=======
+      <section id="contact" className="py-32 px-6 bg-[#0a0a0a]">
+        <div className="max-w-7xl mx-auto">
+>>>>>>> e42b0fa813462651542affaa1c0c5bed094232a0
           <div className="grid lg:grid-cols-5 gap-12 bg-neutral-900 rounded-[2rem] overflow-hidden border border-neutral-800 shadow-2xl">
             {/* Left Side Info */}
             <div className="lg:col-span-2 bg-orange-600 p-12 text-white flex flex-col justify-between relative overflow-hidden">
