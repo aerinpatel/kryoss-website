@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { ChevronDown, HelpCircle } from "lucide-react";
 import FadeUp from "../../components/animations/FadeUp";
 
 const faqs = [
@@ -109,11 +108,6 @@ export default function FAQs() {
                     <span className="text-white font-medium text-lg">
                       {item.q}
                     </span>
-
-                    <ChevronDown
-                      className={`w-5 h-5 text-orange-400 transition-transform duration-300
-                        ${open ? "rotate-180" : ""}`}
-                    />
                   </button>
 
                   {/* Answer */}
