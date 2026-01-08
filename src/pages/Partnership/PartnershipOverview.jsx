@@ -302,7 +302,7 @@ export default function Overview() {
           {/* Step number */}
           <div
             className="absolute -top-4 -left-4 w-12 h-12 rounded-xl
-                       bg-orange-500 text-black font-bold
+                       bg-orange-500 text-white font-bold
                        flex items-center justify-center shadow-lg"
           >
             {item.step}
@@ -315,7 +315,7 @@ export default function Overview() {
             {item.title}
           </h3>
 
-          <p className="mt-3 text-gray-300 text-sm leading-relaxed">
+          <p className="mt-3 text-white text-sm leading-relaxed">
             {item.desc}
           </p>
         </div>
@@ -343,13 +343,13 @@ export default function Overview() {
           </h2>
 
           <p className="text-gray-300 mb-10">
-            Talk to Kryoss about structured execution for your business.
+            Talk to Zryoss about structured execution for your business.
           </p>
 
           <button className="inline-flex items-center gap-2 px-10 py-4
-                             bg-orange-500 text-black font-semibold
+                             bg-orange-500 text-white font-semibold
                              rounded-xl hover:bg-orange-600 transition">
-            Talk to Kryoss <ArrowRight />
+            Talk to Zryoss <ArrowRight />
           </button>
         </div>
       </section>
