@@ -9,6 +9,7 @@ import Industries from "./Industries.jsx";
 // import WhatIsNot from "./WhatIsNot.jsx";
 import Awards from "./Awards.jsx";
 import ImpactStats from "./ImpactStats.jsx";
+import Services from "./Services.jsx";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
      <WhatIsNot />
       <Brands />
       <Solutions />
+      <Services />
       <Awards />
       <Industries />
       <HeroCTA />

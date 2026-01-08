@@ -1,156 +1,202 @@
 import { motion } from "framer-motion";
-import { CheckCircle, XCircle } from "lucide-react";
-import SplitSection from "../../components/layout/SplitSection";
+import {
+  CheckCircle,
+  Users,
+  Target,
+  Award,
+  ArrowUpRight,
+} from "lucide-react";
+
+const FadeUp = ({ children, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6, delay }}
+  >
+    {children}
+  </motion.div>
+);
 
 export default function About() {
   return (
-    <section className="relative py-28 bg-[#0F172A] overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-orange-500/20 blur-[140px]" />
+    <main className="bg-[#050505] text-white overflow-hidden">
 
-      <div className="relative max-w-7xl mx-auto px-6 space-y-32">
-        {/* ================= HEADER ================= */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="max-w-4xl"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Why <span className="text-orange-500">Zryoss</span>
-          </h2>
+      {/* ================= HERO ================= */}
+      <section className="relative py-40 border-b border-white/5">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(249,115,22,0.18),transparent_65%)]" />
 
-          <p className="mt-6 text-gray-400 text-lg leading-relaxed">
-            Zryoss is a structured business enablement platform built to help
-            individuals and organizations operate, scale, and grow with clarity,
-            discipline, and confidence.
-          </p>
-        </motion.div>
+        <div className="relative max-w-6xl mx-auto px-6 text-center">
+          <FadeUp>
+            <h1 className="text-4xl md:text-6xl font-light leading-tight">
+              We Build <span className="text-orange-500">Structured</span>
+              <br />
+              Digital Businesses
+            </h1>
 
-        {/* ================= SECTION 1 ================= */}
-        <SplitSection
-          image="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
-          alt="Business collaboration"
-          delay={0}
-        >
-          <h3 className="text-2xl font-semibold text-orange-400">
-            Structured Business Enablement
-          </h3>
-          <p className="text-gray-300 leading-relaxed">
-            Operational frameworks that eliminate chaos and replace it with
-            clarity and repeatability.
-          </p>
+            <p className="mt-8 text-gray-400 max-w-3xl mx-auto text-lg">
+              Zryoss is a multi-vertical business ecosystem helping companies
+              operate, scale, and grow with discipline, clarity, and systems —
+              not shortcuts.
+            </p>
+          </FadeUp>
+        </div>
+      </section>
 
-          <h3 className="text-2xl font-semibold text-orange-400">
-            Centralized Governance
-          </h3>
-          <p className="text-gray-300 leading-relaxed">
-            Systems, quality standards, and accountability managed centrally
-            for consistent execution.
-          </p>
+      {/* ================= WHO WE ARE ================= */}
+      <section className="py-32">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+          <FadeUp>
+            <img
+              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+              alt="Professional collaboration"
+              className="rounded-3xl object-cover"
+            />
+          </FadeUp>
 
-          <h3 className="text-2xl font-semibold text-orange-400">
-            Built for Long-Term Success
-          </h3>
-          <p className="text-gray-300 leading-relaxed">
-            Sustainable, ethical, and scalable growth — no shortcuts.
-          </p>
-        </SplitSection>
+          <FadeUp delay={0.1}>
+            <h2 className="text-3xl md:text-4xl font-light mb-6">
+              Who We Are
+            </h2>
+            <p className="text-gray-400 leading-relaxed mb-6">
+              Zryoss is not an agency, not a marketplace, and not a shortcut-driven
+              platform. We are a structured execution ecosystem built to support
+              long-term business growth.
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              Our focus is on building strong foundations — technology, people,
+              operations, and governance — that scale as businesses grow.
+            </p>
+          </FadeUp>
+        </div>
+      </section>
 
-        {/* ================= SECTION 2 ================= */}
-        <SplitSection
-          reverse
-          image="https://images.unsplash.com/photo-1556761175-4b46a572b786"
-          alt="What we do"
-          delay={0.1}
-        >
-          <h3 className="text-2xl font-semibold text-green-400 flex items-center gap-2">
-            <CheckCircle className="w-6 h-6" />
-            What We Do
-          </h3>
+      {/* ================= WHAT WE DO ================= */}
+      <section className="py-32 bg-[#0a0a0a] border-y border-white/5">
+        <div className="max-w-6xl mx-auto px-6">
+          <FadeUp>
+            <h2 className="text-3xl md:text-4xl font-light mb-16 text-center">
+              What We Do
+            </h2>
+          </FadeUp>
 
-          <ul className="space-y-4 text-gray-300">
-            <li>✔ Enable structured operations</li>
-            <li>✔ Support scalable business models</li>
-            <li>✔ Maintain governance & accountability</li>
-            <li>✔ Turn strategy into execution</li>
-          </ul>
-        </SplitSection>
+          <div className="grid md:grid-cols-3 gap-10">
+            {[
+              {
+                icon: <Target className="text-orange-500" />,
+                title: "Business Systems",
+                desc:
+                  "Design and implementation of scalable technology and operational systems.",
+              },
+              {
+                icon: <Users className="text-orange-500" />,
+                title: "People & Execution",
+                desc:
+                  "Structured hiring, onboarding, and workforce execution models.",
+              },
+              {
+                icon: <Award className="text-orange-500" />,
+                title: "Governance & Growth",
+                desc:
+                  "Compliance, accountability, and sustainable long-term growth planning.",
+              },
+            ].map((item, i) => (
+              <FadeUp key={i} delay={i * 0.1}>
+                <div className="p-8 rounded-2xl bg-black border border-white/10">
+                  {item.icon}
+                  <h3 className="mt-4 text-xl font-medium">{item.title}</h3>
+                  <p className="mt-3 text-gray-400 text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
 
-        {/* ================= SECTION 3 ================= */}
-        <SplitSection
-          image="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c"
-          alt="What we don’t do"
-          delay={0.2}
-        >
-          <h3 className="text-2xl font-semibold text-red-400 flex items-center gap-2">
-            <XCircle className="w-6 h-6" />
-            What We Don’t Do
-          </h3>
+      {/* ================= TEAM ================= */}
+      <section className="py-32">
+        <div className="max-w-6xl mx-auto px-6">
+          <FadeUp>
+            <h2 className="text-3xl md:text-4xl font-light mb-16 text-center">
+              Leadership & Core Team
+            </h2>
+          </FadeUp>
 
-          <ul className="space-y-4 text-gray-300">
-            <li>✘ No recruitment or job placement</li>
-            <li>✘ No MLM or referral schemes</li>
-            <li>✘ No guaranteed income promises</li>
-            <li>✘ No misleading marketing</li>
-          </ul>
-        </SplitSection>
+          <div className="grid md:grid-cols-4 gap-10">
+            {[
+              { name: "Amit Verma", role: "Founder & Strategy" },
+              { name: "Rohit Sharma", role: "Technology Lead" },
+              { name: "Neha Kapoor", role: "HR & Operations" },
+              { name: "Arjun Mehta", role: "Growth & Marketing" },
+            ].map((member, i) => (
+              <FadeUp key={i} delay={i * 0.1}>
+                <div className="text-center">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                    alt={member.name}
+                    className="w-40 h-40 mx-auto rounded-2xl object-cover mb-6"
+                  />
+                  <h4 className="text-lg font-medium">{member.name}</h4>
+                  <p className="text-sm text-gray-400">{member.role}</p>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
 
-        {/* ================= FINAL CTA ================= */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="
-            relative
-            max-w-3xl
-            mx-auto
-            text-center
-            bg-white/5
-            border
-            border-orange-500/30
-            rounded-2xl
-            p-10
-            backdrop-blur-md
-          "
-        >
-          <div className="absolute inset-0 bg-orange-500/10 blur-3xl rounded-2xl" />
+      {/* ================= VALUES ================= */}
+      <section className="py-32 bg-[#0a0a0a] border-y border-white/5">
+        <div className="max-w-6xl mx-auto px-6">
+          <FadeUp>
+            <h2 className="text-3xl md:text-4xl font-light mb-12 text-center">
+              Our Culture & Values
+            </h2>
+          </FadeUp>
 
-          <div className="relative z-10">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Build with clarity. Scale with confidence.
-            </h3>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {[
+              "Transparency over hype",
+              "Systems over shortcuts",
+              "Execution over promises",
+              "Long-term thinking",
+            ].map((text, i) => (
+              <FadeUp key={i} delay={i * 0.1}>
+                <div className="flex items-start gap-4">
+                  <CheckCircle className="text-orange-500 mt-1" />
+                  <p className="text-gray-300">{text}</p>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <p className="text-gray-400 mb-8">
-              Zryoss provides the structure and governance modern businesses
-              need to grow responsibly and sustainably.
+      {/* ================= CTA ================= */}
+      <section className="py-32">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <FadeUp>
+            <h2 className="text-3xl md:text-4xl font-light mb-6">
+              Let’s Build Something That Lasts
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto mb-10">
+              If you’re serious about building a scalable, ethical, and
+              execution-driven business, Zryoss is built for you.
             </p>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              className="
-                inline-flex
-                items-center
-                gap-2
-                px-10
-                py-4
-                bg-orange-500
-                text-white
-                font-semibold
-                rounded-xl
-                hover:bg-orange-600
-                hover:shadow-[0_0_30px_rgba(249,115,22,0.5)]
-                transition-all
-              "
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-orange-500 text-black font-semibold hover:bg-orange-400 transition"
             >
-              Start Your Journey →
-            </motion.button>
-          </div>
-        </motion.div>
-      </div>
-    </section>
+              Talk to Our Team
+              <ArrowUpRight size={18} />
+            </a>
+          </FadeUp>
+        </div>
+      </section>
+
+    </main>
   );
 }
