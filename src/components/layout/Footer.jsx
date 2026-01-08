@@ -12,7 +12,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-white/10 bg-[#050505] mt-32 text-white overflow-hidden">
+    <footer className="relative border-t border-white/10 bg-[#050505]  text-white overflow-hidden">
       {/* Top Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-orange-500/50 to-transparent" />
 
