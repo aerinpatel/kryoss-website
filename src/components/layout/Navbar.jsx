@@ -33,7 +33,7 @@ export default function Navbar() {
         </Link>
  
         {/* DESKTOP NAV - Unchanged */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+        <div className="hidden md:flex items-center gap-5 text-sm font-medium text-gray-300">
           <DesktopDropdown label="Platform">
             <NavItem to="/platform">What is Zryoss</NavItem>
             <NavItem to="/platform">Business Operating Platform</NavItem>
@@ -79,6 +79,13 @@ export default function Navbar() {
             <NavItem to="/operations/vendor-network">Vendor Management</NavItem>
             <NavItem to="/operations/quality-assurance">Quality & SLA Control</NavItem>
             <NavItem to="/operations/risk-control">Risk Control</NavItem>
+          </DesktopDropdown>
+
+          <DesktopDropdown label="Resources">
+            <NavItem to="/resources/blog">Blog</NavItem>
+            <NavItem to="/resources/faqs">FAQs</NavItem>
+            <NavItem to="/resources/knowledge-center">Knowledge Center</NavItem>
+            <NavItem to="/resources/partner-guidelines">Partner Guidelines</NavItem>
           </DesktopDropdown>
  
           <DesktopDropdown label="Company">
@@ -161,6 +168,17 @@ export default function Navbar() {
               <NavItem to="/operations/quality-sla">Quality & SLA Control</NavItem>
               <NavItem to="/operations/risk-control">Risk Control</NavItem>
             </MobileAccordion>
+
+            <MobileAccordion
+                  label="Resources"
+                  isOpen={activeMobileDropdown === "resources"}
+                  onClick={() => toggleMobileDropdown("resources")}
+                >
+                  <NavItem to="/resources/blog">Blog</NavItem>
+                  <NavItem to="/resources/faqs">FAQs</NavItem>
+                  <NavItem to="/resources/knowledge-center">Knowledge Center</NavItem>
+                  <NavItem to="/resources/partner-guidelines">Partner Guidelines</NavItem>
+                </MobileAccordion>
  
             <MobileAccordion label="Company" isOpen={activeMobileDropdown === "company"} onClick={() => toggleMobileDropdown("company")}>
               <NavItem to="/company/about">About</NavItem>

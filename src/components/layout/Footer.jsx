@@ -74,12 +74,41 @@ export default function Footer() {
 
         {/* NAV SECTIONS */}
         {/* NAV SECTIONS */}
-<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10 mb-16">
+<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-8 gap-x-8 gap-y-10 mb-16">
 
   {/* PLATFORM */}
   <FooterSection title="Platform">
-    <FooterLink to="/platform">Platform</FooterLink>
-    <FooterLink to="/ecosystem">Ecosystem</FooterLink>
+    <FooterLink to="/platform">What is Zryoss</FooterLink>
+    <FooterLink to="/platform">Business Operating Platform</FooterLink>
+    <FooterLink to="/platform">Sales Enablement System</FooterLink>
+    <FooterLink to="/platform">Technology Platform</FooterLink>
+    <FooterLink to="/platform">AI & Automation Vision</FooterLink>
+
+  </FooterSection>
+
+  {/* HOW IT WORKS */}
+<FooterSection title="How It Works">
+  <FooterLink to="/how-it-works">Operating Model</FooterLink>
+  <FooterLink to="/how-it-works">Sales → Demo → Delivery Flow</FooterLink>
+  <FooterLink to="/how-it-works">Revenue Logic</FooterLink>
+  <FooterLink to="/how-it-works">Roles & Responsibilities</FooterLink>
+  <FooterLink to="/how-it-works">Governance & Control</FooterLink>
+</FooterSection>
+
+    {/* ECOSYSTEM */}
+<FooterSection title="Ecosystem">
+  <FooterLink to="/ecosystem">Ecosystem Overview</FooterLink>
+  <FooterLink to="/ecosystem">Brands Under Zryoss</FooterLink>
+  <FooterLink to="/ecosystem">Vendor Network</FooterLink>
+  <FooterLink to="/ecosystem">Partner Network</FooterLink>
+</FooterSection>
+
+  {/* PARTNERSHIP */}
+  <FooterSection title="Partnership">
+    <FooterLink to="/partnership">Overview</FooterLink>
+    <FooterLink to="/partnership/ipp">IPP</FooterLink>
+    <FooterLink to="/partnership/bpp">BPP</FooterLink>
+    <FooterLink to="/partnership/comparison">IPP vs BPP</FooterLink>
   </FooterSection>
 
   {/* SOLUTIONS */}
@@ -92,12 +121,14 @@ export default function Footer() {
     <FooterLink to="/solutions/real-estate">Real Estate</FooterLink>
   </FooterSection>
 
-  {/* PARTNERSHIP */}
-  <FooterSection title="Partnership">
-    <FooterLink to="/partnership">Overview</FooterLink>
-    <FooterLink to="/partnership/ipp">IPP</FooterLink>
-    <FooterLink to="/partnership/bpp">BPP</FooterLink>
-    <FooterLink to="/partnership/comparison">IPP vs BPP</FooterLink>
+
+    {/* OPERATIONS */}
+  <FooterSection title="Operations">
+    <FooterLink to="/operations/demo-support">Demo & Pre-Sales Support</FooterLink>
+    <FooterLink to="/operations/delivery-management">Delivery Management</FooterLink>
+    <FooterLink to="/operations/vendor-network">Vendor Management</FooterLink>
+    <FooterLink to="/operations/quality-assurance">Quality & SLA Control</FooterLink>
+    <FooterLink to="/operations/risk-control">Risk Control</FooterLink>
   </FooterSection>
 
   {/* RESOURCES */}
