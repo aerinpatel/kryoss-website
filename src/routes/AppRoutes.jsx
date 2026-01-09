@@ -36,8 +36,18 @@ import Media from "../pages/Company/Media.jsx";
 import Contact from "../pages/Contact/Contact.jsx";
 import Apply from "../pages/Contact/Apply.jsx";
 import Ecosystem from "../pages/Ecosystem/Ecosystem.jsx";
-
-
+import BusinessOperating from "../pages/Platform/BusinessOperating";
+import SalesEnablement from "../pages/Platform/SalesEnablement";
+import TechnologyPlatform from "../pages/Platform/TechnologyPlatform";
+import AIAutomation from "../pages/Platform/AIAutomation";
+import OperatingModel from "../pages/HowItWorks/OperatingModel";
+import SalesDemoDelivery from "../pages/HowItWorks/SalesDemoDelivery";
+import RevenueLogic from "../pages/HowItWorks/RevenueLogic";
+import RolesResponsibilities from "../pages/HowItWorks/RolesResponsibilities";
+import GovernanceControl from "../pages/HowItWorks/GovernanceControl";
+import Brands from "../pages/Ecosystem/Brands";
+import Vendors from "../pages/Ecosystem/Vendors";
+import Partners from "../pages/Ecosystem/Partners";
 
 
 export default function AppRoutes() {
@@ -46,6 +56,10 @@ export default function AppRoutes() {
       <Route path="/" element={<Home />} />
       {/* Next pages will come here */}
       <Route path="/platform" element={<Platform />} />
+      <Route path="/platform/business-operating-platform" element={<BusinessOperating />} />
+      <Route path="/platform/sales-enablement" element={<SalesEnablement />} />
+      <Route path="/platform/technology" element={<TechnologyPlatform />} />
+      <Route path="/platform/ai-automation" element={<AIAutomation />} />
       <Route path="/partnership" element={<PartnershipOverview />} />
       <Route path="/partnership/ipp" element={<IPP />} />
       <Route path="/partnership/ipp-roles" element={<IPPRoles />} />
@@ -83,6 +97,19 @@ export default function AppRoutes() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/apply" element={<Apply />} />
       <Route path="/ecosystem" element={<Ecosystem />} />
+      <Route path="/platform/business-operating-platform" element={<BusinessOperating />} />
+      <Route path="/platform/sales-enablement" element={<SalesEnablement />} />
+      <Route path="/platform/technology" element={<TechnologyPlatform />} />
+      <Route path="/platform/ai-automation" element={<AIAutomation />} />
+      <Route path="/how-it-works/operating-model" element={<OperatingModel />} />
+      <Route path="/how-it-works/sales-demo-delivery" element={<SalesDemoDelivery />} />
+      <Route path="/how-it-works/revenue-logic" element={<RevenueLogic />} />
+      <Route path="/how-it-works/roles-responsibilities" element={<RolesResponsibilities />} />
+      <Route path="/how-it-works/governance-control" element={<GovernanceControl />} />
+      <Route path="/ecosystem/brands" element={<Brands />} />
+        <Route path="/ecosystem/vendors" element={<Vendors />} />
+        <Route path="/ecosystem/partners" element={<Partners />} />
+
 
     </Routes>
   );

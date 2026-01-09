@@ -36,25 +36,26 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-5 text-sm font-medium text-gray-300">
           <DesktopDropdown label="Platform">
             <NavItem to="/platform">What is Zryoss</NavItem>
-            <NavItem to="/platform">Business Operating Platform</NavItem>
-            <NavItem to="/platform">Sales Enablement System</NavItem>
-            <NavItem to="/platform">Technology Platform</NavItem>
-            <NavItem to="/platform">AI & Automation Vision</NavItem>
+            <NavItem to="/platform/business-operating-platform">Business Operating Platform</NavItem>
+            <NavItem to="/platform/sales-enablement">Sales Enablement System</NavItem>
+            <NavItem to="/platform/technology">Technology Platform</NavItem>
+            <NavItem to="/platform/ai-automation">AI & Automation Vision</NavItem>
           </DesktopDropdown>
  
           <DesktopDropdown label="How It Works">
-            <NavItem to="/how-it-works">Operating Model</NavItem>
-            <NavItem to="/how-it-works">Sales → Demo → Delivery Flow</NavItem>
-            <NavItem to="/how-it-works">Revenue Logic</NavItem>
-            <NavItem to="/how-it-works">Roles & Responsibilities</NavItem>
-            <NavItem to="/how-it-works">Governance & Control</NavItem>
+            <NavItem to="/how-it-works/operating-model">Operating Model</NavItem>
+            <NavItem to="/how-it-works/sales-demo-delivery">Sales → Demo → Delivery Flow</NavItem>
+            <NavItem to="/how-it-works/revenue-logic">Revenue Logic</NavItem>
+            <NavItem to="/how-it-works/roles-responsibilities">Roles & Responsibilities</NavItem>
+            <NavItem to="/how-it-works/governance-control">Governance & Control</NavItem>
           </DesktopDropdown>
  
           <DesktopDropdown label="Ecosystem">
             <NavItem to="/ecosystem">Ecosystem Overview</NavItem>
-            <NavItem to="/ecosystem">Brands Under Zryoss</NavItem>
-            <NavItem to="/ecosystem">Vendor Network</NavItem>
-            <NavItem to="/ecosystem">Partner Network</NavItem>
+            <NavItem to="/ecosystem/brands">Brands Under Zryoss</NavItem>
+            <NavItem to="/ecosystem/vendors">Vendor Network</NavItem>
+            <NavItem to="/ecosystem/partners">Partner Network</NavItem>
+
           </DesktopDropdown>
  
           <DesktopDropdown label="Partnership">
@@ -124,25 +125,26 @@ export default function Navbar() {
  
             <MobileAccordion label="Platform" isOpen={activeMobileDropdown === "platform"} onClick={() => toggleMobileDropdown("platform")}>
               <NavItem to="/platform">What is Zryoss</NavItem>
-              <NavItem to="/platform">Business Operating Platform</NavItem>
-              <NavItem to="/platform">Sales Enablement System</NavItem>
-              <NavItem to="/platform">Technology Platform</NavItem>
-              <NavItem to="/platform">AI & Automation Vision</NavItem>
+              <NavItem to="/platform/business-operating-platform">Business Operating Platform</NavItem>
+              <NavItem to="/platform/sales-enablement">Sales Enablement System</NavItem>
+              <NavItem to="/platform/technology">Technology Platform</NavItem>
+            <NavItem to="/platform/ai-automation">AI & Automation Vision</NavItem>
             </MobileAccordion>
  
             <MobileAccordion label="How It Works" isOpen={activeMobileDropdown === "how"} onClick={() => toggleMobileDropdown("how")}>
-              <NavItem to="/how-it-works">Operating Model</NavItem>
-              <NavItem to="/how-it-works">Sales → Demo → Delivery</NavItem>
-              <NavItem to="/how-it-works">Revenue Logic</NavItem>
-              <NavItem to="/how-it-works">Roles & Responsibilities</NavItem>
-              <NavItem to="/how-it-works">Governance & Control</NavItem>
+              <NavItem to="/how-it-works/operating-model">Operating Model</NavItem>
+              <NavItem to="/how-it-works/sales-demo-delivery">Sales → Demo → Delivery Flow</NavItem>
+              <NavItem to="/how-it-works/revenue-logic">Revenue Logic</NavItem>
+              <NavItem to="/how-it-works/roles-responsibilities">Roles & Responsibilities</NavItem>
+              <NavItem to="/how-it-works/governance-control">Governance & Control</NavItem>
             </MobileAccordion>
  
             <MobileAccordion label="Ecosystem" isOpen={activeMobileDropdown === "ecosystem"} onClick={() => toggleMobileDropdown("ecosystem")}>
               <NavItem to="/ecosystem">Ecosystem Overview</NavItem>
-              <NavItem to="/ecosystem">Brands Under Zryoss</NavItem>
-              <NavItem to="/ecosystem">Vendor Network</NavItem>
-              <NavItem to="/ecosystem">Partner Network</NavItem>
+              <NavItem to="/ecosystem/brands">Brands Under Zryoss</NavItem>
+              <NavItem to="/ecosystem/vendors">Vendor Network</NavItem>
+              <NavItem to="/ecosystem/partners">Partner Network</NavItem>
+
             </MobileAccordion>
  
             <MobileAccordion label="Partnership" isOpen={activeMobileDropdown === "partnership"} onClick={() => toggleMobileDropdown("partnership")}>
