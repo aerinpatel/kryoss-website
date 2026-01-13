@@ -11,6 +11,13 @@
   --text-muted: #7C8394;
 }
 
+html,
+body,
+#root {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   background-color: var(--bg-main);
   color: var(--text-main);
