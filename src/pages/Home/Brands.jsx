@@ -91,10 +91,9 @@ export default function Brands() {
                 onClick={() => setActiveBrand(index)}
                 onHoverStart={() => setActiveBrand(index)}
                 className={`relative rounded-3xl overflow-hidden cursor-pointer border border-white/5 transition-all duration-700
-                  ${
-                    isActive
-                      ? "lg:flex-[3] flex-[3] bg-[#0a0a0a]"
-                      : "lg:flex-[1] flex-[1] bg-black hover:bg-[#0a0a0a]"
+                  ${isActive
+                    ? "lg:flex-[3] flex-[3] bg-[#0a0a0a]"
+                    : "lg:flex-[1] flex-[1] bg-black hover:bg-[#0a0a0a]"
                   }`}
               >
                 {/* Active Gradient */}
@@ -111,10 +110,9 @@ export default function Brands() {
                   <div className="flex justify-between items-start">
                     <div
                       className={`w-12 h-12 lg:w-14 lg:h-14 rounded-2xl flex items-center justify-center border backdrop-blur-md
-                        ${
-                          isActive
-                            ? "border-white/20 bg-white/10"
-                            : "border-white/10 bg-white/5"
+                        ${isActive
+                          ? "border-white/20 bg-white/10"
+                          : "border-white/10 bg-white/5"
                         }`}
                       style={{ color: isActive ? brand.color : "#6b7280" }}
                     >
@@ -153,10 +151,9 @@ export default function Brands() {
                     <motion.h3
                       layout="position"
                       className={`mt-2 font-light text-white transition-all
-                        ${
-                          isActive
-                            ? "text-2xl md:text-3xl"
-                            : "text-lg lg:opacity-0"
+                        ${isActive
+                          ? "text-2xl md:text-3xl"
+                          : "text-lg lg:opacity-0"
                         }`}
                     >
                       {brand.name}

@@ -1,15 +1,17 @@
 import Hero from "./Hero";
 import WhatIsNot from "./WhatIsNot";
-import HowItWorks from "./HowItWorks";
+// import HowItWorks from "./HowItWorks";
 import Brands from "./Brands";
 import HeroCTA from "./HeroCTA.jsx";
-import Solutions from "./Soltions";
+import Solutions from "./Solutions";
 import HeroContact from "./HeroContact";
 import Industries from "./Industries.jsx";
 // import WhatIsNot from "./WhatIsNot.jsx";
 import Awards from "./Awards.jsx";
 import ImpactStats from "./ImpactStats.jsx";
 import Services from "./Services.jsx";
+import HowItWorks from "./HowItWorks.jsx";
+
 
 export default function Home() {
   return (
@@ -17,7 +19,7 @@ export default function Home() {
       <Hero />
       <ImpactStats />
       <HowItWorks />
-     <WhatIsNot />
+      <WhatIsNot />
       <Brands />
       <Solutions />
       <Services />

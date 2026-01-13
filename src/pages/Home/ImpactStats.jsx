@@ -66,7 +66,7 @@ export default function ImpactStats() {
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-24">
         {/* FAKE COMPANIES ROW */}
-        <div className="flex flex-wrap justify-center items-center gap-8 mb-24 opacity-80">
+        <div className="flex flex-wrap justify-center items-center gap-3 md:gap-8 mb-24 opacity-80">
           {companies.map((name, i) => (
             <div
               key={i}

@@ -30,7 +30,7 @@ export default function Hero() {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.play().catch(() => {});
+      videoRef.current.play().catch(() => { });
     }
   }, []);
 
@@ -53,11 +53,11 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative h-screen bg-[#050505] text-white overflow-hidden">
+    <section className="relative min-h-screen bg-[#050505] text-white overflow-hidden">
       <style>{customStyles}</style>
 
       {/* BACKGROUND */}
-      <div className="fixed inset-0 z-0 bg-black">
+      <div className="fixed inset-0 z-0 bg-black overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
           style={{
@@ -76,9 +76,8 @@ export default function Hero() {
           muted
           playsInline
           onLoadedData={() => setVideoLoaded(true)}
-          className={`w-full h-full object-cover scale-110 transition-opacity duration-1000 ${
-            videoLoaded ? "opacity-100" : "opacity-0"
-          }`}
+          className={`w-full h-full object-cover scale-110 transition-opacity duration-1000 ${videoLoaded ? "opacity-100" : "opacity-0"
+            }`}
         >
           <source
             src="https://cdn.pixabay.com/video/2021/08/01/83542-583271427_large.mp4"
@@ -90,10 +89,10 @@ export default function Hero() {
       {/* CONTENT */}
       <div className="relative z-10 h-full">
         <FadeUp>
-          <header className="h-full flex flex-col justify-center px-6 lg:px-28 xl:px-32 max-w-[90rem] mx-auto">
+          <header className="h-full flex flex-col justify-center px-6 lg:px-28 xl:px-32 max-w-[90rem] mx-auto py-32">
             {/* TEXT */}
-            <div className="max-w-xl mt-26">
-              <h1 className="text-4xl md:text-5xl font-light leading-[1.05] tracking-tight mb-8">
+            <div className="max-w-xl mt-4">
+              <h1 className="text-3xl md:text-5xl font-light leading-[1.05] tracking-tight mb-8">
                 Build Your Own Business.
                 <br />
                 <span className="text-orange-400">
@@ -117,7 +116,7 @@ export default function Hero() {
             {/* STATS */}
             <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-10 
               border border-white/10 border-t-white/20 
-              pt-14 pb-12 px-10 
+              pt-14 pb-12 px-5 md:px-10 
               backdrop-blur-md rounded-3xl 
               bg-black/40"
             >

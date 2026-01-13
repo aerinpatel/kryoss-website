@@ -1,321 +1,388 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { ChevronRight } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
+  const [activeMenu, setActiveMenu] = useState(null);
+  const [activeLeftTab, setActiveLeftTab] = useState("Overview");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeMobileDropdown, setActiveMobileDropdown] = useState(null);
+  const [openMobileAccordion, setOpenMobileAccordion] = useState(null);
   const location = useLocation();
+  const navRef = useRef(null);
 
   useEffect(() => {
+    setActiveMenu(null);
     setIsMobileMenuOpen(false);
-    setActiveMobileDropdown(null);
+    setActiveLeftTab("Overview");
   }, [location]);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setActiveMenu(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? "hidden" : "unset";
   }, [isMobileMenuOpen]);
 
-  const toggleMobileDropdown = (name) => {
-    setActiveMobileDropdown(activeMobileDropdown === name ? null : name);
-  };
+  const navData = [
+    {
+      label: "System",
+      key: "system",
+      leftTabs: [
+        {
+          tab: "Overview",
+          links: [
+            { title: "What is Zryoss", to: "/platform" },
+            { title: "Business Operating System", to: "/platform/business-operating-platform" },
+            { title: "How Zryoss Works", to: "/how-it-works/operating-model" },
+            { title: "Dark to Direction (Philosophy)", to: "/company/founder-note" },
+            { title: "Why Zryoss is Different", to: "/platform/ai-automation" },
+            { title: "Zryoss Methodology", to: "/how-it-works/revenue-logic" },
+          ],
+        },
+      ],
+    },
+    {
+      label: "Ecosystem",
+      key: "ecosystem",
+      leftTabs: [
+        {
+          tab: "Overview",
+          links: [{ title: "Ecosystem Overview", to: "/ecosystem" }],
+        },
+        {
+          tab: "Core Brands",
+          links: [
+            { title: "Vyombiz – Business Growth", to: "/ecosystem/brands" },
+            { title: "Clink HR – Hiring & HR", to: "/ecosystem/brands" },
+            { title: "Edulinker – Education & Skills", to: "/ecosystem/brands" },
+            { title: "Medikryoss – Healthcare", to: "/ecosystem/brands" },
+            { title: "Kryoss Softech – Technology", to: "/ecosystem/brands" },
+          ],
+        },
+        {
+          tab: "Ecosystem Layers",
+          links: [
+            { title: "Vendor Network", to: "/ecosystem/vendors" },
+            { title: "Technology Stack", to: "/platform/technology" },
+            { title: "Sales & Distribution System", to: "/platform/sales-enablement" },
+            { title: "Marketing Engine", to: "/solutions/digital-marketing" },
+            { title: "Finance & Compliance Support", to: "/solutions/legal" },
+            { title: "Operations & Execution Layer", to: "/operations/delivery-management" },
+          ],
+        },
+      ],
+    },
+    {
+      label: "Partners",
+      key: "partners",
+      leftTabs: [
+        {
+          tab: "Overview",
+          links: [
+            { title: "Partner Overview", to: "/partnership" },
+            { title: "Who Can Become a Partner", to: "/partnership" },
+            { title: "Partner Benefits", to: "/partnership" },
+            { title: "Revenue Model", to: "/partnership/comparison" },
+            { title: "Training & Enablement", to: "/resources/partner-guidelines" },
+            { title: "Partner Support System", to: "/resources/knowledge-center" },
+            { title: "Partner FAQs", to: "/resources/faqs" },
+          ],
+        },
+      ],
+    },
+    {
+      label: "IPP / BPP",
+      key: "ippbpp",
+      leftTabs: [
+        {
+          tab: "IPP",
+          links: [
+            { title: "IPP Overview", to: "/partnership/ipp" },
+            { title: "Who Should Join IPP", to: "/partnership/ipp" },
+            { title: "IPP Benefits", to: "/partnership/ipp" },
+            { title: "IPP Revenue Model", to: "/partnership/ipp" },
+          ],
+        },
+        {
+          tab: "BPP",
+          links: [
+            { title: "BPP Overview", to: "/partnership/bpp" },
+            { title: "Who Should Join BPP", to: "/partnership/bpp" },
+            { title: "BPP Benefits", to: "/partnership/bpp" },
+            { title: "BPP Revenue Model", to: "/partnership/bpp" },
+          ],
+        },
+        {
+          tab: "Compare",
+          links: [{ title: "Compare IPP vs BPP", to: "/partnership/comparison" }],
+        },
+      ],
+    },
+    {
+      label: "Solutions",
+      key: "solutions",
+      leftTabs: [
+        {
+          tab: "By Need",
+          links: [
+            { title: "Start a Business", to: "/solutions/it-software" },
+            { title: "Scale an Existing Business", to: "/solutions/payroll" },
+            { title: "Build a Personal Brand", to: "/solutions/digital-marketing" },
+            { title: "Digital Transformation", to: "/solutions/it-software" },
+          ],
+        },
+        {
+          tab: "By Role",
+          links: [
+            { title: "For Job Seekers", to: "/solutions/hr-recruitment" },
+            { title: "For Freelancers", to: "/solutions/digital-marketing" },
+            { title: "For Startups", to: "/solutions/it-software" },
+            { title: "For Enterprises", to: "/solutions/legal" },
+          ],
+        },
+      ],
+    },
+    {
+      label: "Resources",
+      key: "resources",
+      leftTabs: [
+        {
+          tab: "Explore",
+          links: [
+            { title: "Blogs", to: "/resources/blog" },
+            { title: "Case Studies", to: "/resources/knowledge-center" },
+            { title: "Success Stories", to: "/resources/knowledge-center" },
+            { title: "Playbooks & Guides", to: "/resources/partner-guidelines" },
+            { title: "FAQs", to: "/resources/faqs" },
+            { title: "Events & Webinars", to: "/resources/blog" },
+          ],
+        },
+      ],
+    },
+    {
+      label: "Company",
+      key: "company",
+      leftTabs: [
+        {
+          tab: "Overview",
+          links: [
+            { title: "About Zryoss", to: "/company/about" },
+            { title: "Vision & Mission", to: "/company/vision-mission" },
+            { title: "Leadership & Core Team", to: "/company/about" },
+            { title: "Careers", to: "/company/careers" },
+            { title: "Contact Us", to: "/contact" },
+            { title: "Legal & Compliance", to: "/company/media" },
+          ],
+        },
+      ],
+    },
+  ];
+
+  const activeConfig = navData.find((n) => n.key === activeMenu);
+  const leftTabs = activeConfig?.leftTabs || [];
+  const activeTabData = leftTabs.find((t) => t.tab === activeLeftTab) || leftTabs[0];
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-black border-b border-white/10 text-white">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 h-[72px] md:h-16 flex items-center justify-between">
-        {/* LOGO */}
-        <Link to="/" className="relative z-50 flex items-center">
-          <img
-            src="/Zryoss_logo_2_white.jpg"
-            alt="Zryoss Logo"
-            className="w-28 md:w-[140px] h-auto object-contain"
-          />
-        </Link>
-
-        {/* DESKTOP NAV */}
-        <div className="hidden md:flex items-center gap-7 text-sm font-medium text-gray-300">
-          <DesktopDropdown label="Platform">
-            <NavItem to="/platform">What is Zryoss</NavItem>
-            <NavItem to="/platform/business-operating-platform">
-              Business Operating Platform
-            </NavItem>
-            <NavItem to="/platform/sales-enablement">
-              Sales Enablement System
-            </NavItem>
-            <NavItem to="/platform/technology">Technology Platform</NavItem>
-            <NavItem to="/platform/ai-automation">AI & Automation Vision</NavItem>
-          </DesktopDropdown>
-
-          <DesktopDropdown label="How It Works">
-            <NavItem to="/how-it-works/operating-model">Operating Model</NavItem>
-            <NavItem to="/how-it-works/sales-demo-delivery">
-              Sales → Demo → Delivery Flow
-            </NavItem>
-            <NavItem to="/how-it-works/revenue-logic">Revenue Logic</NavItem>
-            <NavItem to="/how-it-works/roles-responsibilities">
-              Roles & Responsibilities
-            </NavItem>
-            <NavItem to="/how-it-works/governance-control">
-              Governance & Control
-            </NavItem>
-          </DesktopDropdown>
-
-          <DesktopDropdown label="Ecosystem">
-            <NavItem to="/ecosystem">Ecosystem Overview</NavItem>
-            <NavItem to="/ecosystem/brands">Brands Under Zryoss</NavItem>
-            <NavItem to="/ecosystem/vendors">Vendor Network</NavItem>
-            <NavItem to="/ecosystem/partners">Partner Network</NavItem>
-          </DesktopDropdown>
-
-          <DesktopDropdown label="Partnership">
-            <NavItem to="/partnership">Overview</NavItem>
-            <NavItem to="/partnership/ipp">IPP</NavItem>
-            <NavItem to="/partnership/bpp">BPP</NavItem>
-            <NavItem to="/partnership/comparison">IPP vs BPP</NavItem>
-          </DesktopDropdown>
-
-          <DesktopDropdown label="Solutions">
-            <NavItem to="/solutions/it-software">IT & Software</NavItem>
-            <NavItem to="/solutions/hr-recruitment">HR & Recruitment</NavItem>
-            <NavItem to="/solutions/digital-marketing">Digital Marketing</NavItem>
-            <NavItem to="/solutions/payroll">Payroll</NavItem>
-            <NavItem to="/solutions/legal">Legal</NavItem>
-            <NavItem to="/solutions/real-estate">Real Estate</NavItem>
-          </DesktopDropdown>
-
-          <DesktopDropdown label="Operations">
-            <NavItem to="/operations/demo-support">Demo & Pre-Sales Support</NavItem>
-            <NavItem to="/operations/delivery-management">Delivery Management</NavItem>
-            <NavItem to="/operations/vendor-network">Vendor Management</NavItem>
-            <NavItem to="/operations/quality-assurance">Quality & SLA Control</NavItem>
-            <NavItem to="/operations/risk-control">Risk Control</NavItem>
-          </DesktopDropdown>
-
-          <DesktopDropdown label="Resources">
-            <NavItem to="/resources/blog">Blog</NavItem>
-            <NavItem to="/resources/faqs">FAQs</NavItem>
-            <NavItem to="/resources/knowledge-center">Knowledge Center</NavItem>
-            <NavItem to="/resources/partner-guidelines">Partner Guidelines</NavItem>
-          </DesktopDropdown>
-
-          <DesktopDropdown label="Company">
-            <NavItem to="/company/about">About</NavItem>
-            <NavItem to="/company/founder-note">Founder</NavItem>
-            <NavItem to="/company/vision-mission">Vision</NavItem>
-            <NavItem to="/company/careers">Careers</NavItem>
-            <NavItem to="/company/media">Media</NavItem>
-          </DesktopDropdown>
+    <header
+      ref={navRef}
+      className="fixed top-0 w-full z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5 text-white"
+    >
+      {/* Top Bar */}
+      <div className="relative max-w-[90rem] mx-auto px-6 lg:px-28 xl:px-32 h-[70px] flex items-center justify-between">
+        {/* Logo */}
+        <div className="flex items-center gap-16">
+          <Link to="/" className="relative z-50">
+            <img
+              src="/Zryoss_logo_2_white.jpg"
+              alt="Logo"
+              className="w-32 h-auto brightness-110"
+            />
+          </Link>
         </div>
 
-        {/* DESKTOP CTA */}
-        <div className="hidden md:flex gap-3">
-          <Link
-            to="/contact"
-            className="px-4 py-2 text-sm border border-white/20 rounded-lg hover:border-orange-400 transition-colors"
-          >
-            Contact
-          </Link>
+        {/* Desktop Nav Items - Centered */}
+        <nav className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8">
+          {navData.map((item) => (
+            <button
+              key={item.key}
+              onMouseEnter={() => {
+                setActiveMenu(item.key);
+                setActiveLeftTab(item.leftTabs[0]?.tab || "Overview");
+              }}
+              className={`group relative py-[25px] text-[14px] font-medium transition-all duration-300 ${activeMenu === item.key
+                ? "text-white"
+                : "text-gray-400 hover:text-white"
+                }`}
+            >
+              {item.label}
+              <span
+                className={`absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-orange-500 to-red-500 transition-all duration-300 ${activeMenu === item.key
+                  ? "scale-x-100 opacity-100"
+                  : "scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-50"
+                  }`}
+              />
+            </button>
+          ))}
+        </nav>
+
+        {/* CTA + Mobile button */}
+        <div className="flex items-center gap-6">
           <Link
             to="/apply"
-            className="px-4 py-2 text-sm bg-orange-500 rounded-lg font-semibold hover:bg-orange-400 transition-colors"
+            className="hidden lg:flex items-center gap-2 px-6 py-2.5 text-[14px] font-semibold bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white transition-all rounded-full shadow-[0_0_20px_rgba(234,88,12,0.3)] hover:shadow-[0_0_30px_rgba(234,88,12,0.5)] transform hover:scale-105"
           >
-            Apply
+            Join the System
           </Link>
+
+          <button
+            className="lg:hidden p-2 text-2xl hover:text-orange-500 transition-colors relative z-50"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? "✕" : "☰"}
+          </button>
         </div>
+      </div>
 
-        {/* MOBILE HAMBURGER */}
-        <button
-          className="md:hidden p-2 relative z-50 text-xl"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? "✕" : "☰"}
-        </button>
+      {/* Mega Menu Dropdown */}
+      <div
+        className={`absolute top-[70px] left-0 w-full bg-[#0a0a0a] shadow-[0_20px_50px_rgba(0,0,0,0.8)] transition-all duration-300 ease-out border-b border-white/5 ${activeMenu
+          ? "opacity-100 translate-y-0 visible"
+          : "opacity-0 -translate-y-4 invisible"
+          }`}
+        onMouseLeave={() => setActiveMenu(null)}
+      >
+        <div className="max-w-[90rem] mx-auto flex h-[450px]">
+          {/* Vertical Sidebar Tabs */}
+          <div className="w-[280px] bg-gradient-to-b from-[#0f0f0f] to-[#0a0a0a] border-r border-white/5">
+            <div className="py-8 px-4">
+              {leftTabs.map((t) => (
+                <button
+                  key={t.tab}
+                  onMouseEnter={() => setActiveLeftTab(t.tab)}
+                  className={`w-full group flex items-center justify-between px-6 py-3.5 mb-1 text-[15px] font-normal rounded-lg transition-all duration-200 ${activeLeftTab === t.tab
+                    ? "text-white bg-gradient-to-r from-orange-500/20 to-red-500/10 border-l-2 border-orange-500"
+                    : "text-gray-400 hover:text-white hover:bg-white/[0.03] border-l-2 border-transparent"
+                    }`}
+                >
+                  <span>{t.tab}</span>
+                  <ChevronRight
+                    className={`w-4 h-4 transition-all duration-200 ${activeLeftTab === t.tab
+                      ? "text-orange-500 translate-x-1"
+                      : "opacity-0 group-hover:opacity-50"
+                      }`}
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
 
-        {/* MOBILE MENU */}
-        <div
-          className={`fixed inset-0 bg-black/95 backdrop-blur-md z-40 transform transition-transform duration-300 md:hidden
-          ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
-        >
-          <div className="pt-20 sm:pt-24 px-4 sm:px-6 h-full overflow-y-auto pb-28 sm:pb-32">
-            <MobileAccordion
-              label="Platform"
-              isOpen={activeMobileDropdown === "platform"}
-              onClick={() => toggleMobileDropdown("platform")}
-            >
-              <NavItem to="/platform">What is Zryoss</NavItem>
-              <NavItem to="/platform/business-operating-platform">
-                Business Operating Platform
-              </NavItem>
-              <NavItem to="/platform/sales-enablement">
-                Sales Enablement System
-              </NavItem>
-              <NavItem to="/platform/technology">Technology Platform</NavItem>
-              <NavItem to="/platform/ai-automation">AI & Automation Vision</NavItem>
-            </MobileAccordion>
+          {/* Sub-links Grid */}
+          <div className="flex-1 p-10 overflow-y-auto">
+            <div className="mb-8">
+              <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-orange-500/90 font-bold">
+                <span className="w-8 h-[2px] bg-gradient-to-r from-orange-500 to-transparent" />
+                {activeLeftTab}
+              </span>
+            </div>
 
-            <MobileAccordion
-              label="How It Works"
-              isOpen={activeMobileDropdown === "how"}
-              onClick={() => toggleMobileDropdown("how")}
-            >
-              <NavItem to="/how-it-works/operating-model">Operating Model</NavItem>
-              <NavItem to="/how-it-works/sales-demo-delivery">
-                Sales → Demo → Delivery Flow
-              </NavItem>
-              <NavItem to="/how-it-works/revenue-logic">Revenue Logic</NavItem>
-              <NavItem to="/how-it-works/roles-responsibilities">
-                Roles & Responsibilities
-              </NavItem>
-              <NavItem to="/how-it-works/governance-control">
-                Governance & Control
-              </NavItem>
-            </MobileAccordion>
+            <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+              {activeTabData?.links?.map((link, idx) => (
+                <Link
+                  key={idx}
+                  to={link.to}
+                  onClick={() => setActiveMenu(null)}
+                  className="group flex items-start gap-3 p-4 rounded-xl hover:bg-white/[0.03] transition-all duration-200"
+                >
+                  <div className="w-1.5 h-1.5 rounded-full bg-orange-500/50 group-hover:bg-orange-500 mt-2 transition-colors" />
+                  <div className="flex-1">
+                    <span className="text-[15px] font-normal text-gray-300 group-hover:text-white transition-colors leading-snug block">
+                      {link.title}
+                    </span>
+                    <span className="h-[1px] w-0 bg-gradient-to-r from-orange-500 to-transparent transition-all duration-300 group-hover:w-full block mt-1.5" />
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
 
-            <MobileAccordion
-              label="Ecosystem"
-              isOpen={activeMobileDropdown === "ecosystem"}
-              onClick={() => toggleMobileDropdown("ecosystem")}
-            >
-              <NavItem to="/ecosystem">Ecosystem Overview</NavItem>
-              <NavItem to="/ecosystem/brands">Brands Under Zryoss</NavItem>
-              <NavItem to="/ecosystem/vendors">Vendor Network</NavItem>
-              <NavItem to="/ecosystem/partners">Partner Network</NavItem>
-            </MobileAccordion>
+          {/* Right Visual Block */}
+          <div className="w-80 bg-gradient-to-b from-white/[0.02] to-transparent p-10 hidden xl:flex flex-col justify-between border-l border-white/5">
+            <div>
+              <div className="text-xs uppercase tracking-[0.2em] text-orange-500/80 font-bold mb-3">
+                Quick Stats
+              </div>
 
-            <MobileAccordion
-              label="Partnership"
-              isOpen={activeMobileDropdown === "partnership"}
-              onClick={() => toggleMobileDropdown("partnership")}
-            >
-              <NavItem to="/partnership">Overview</NavItem>
-              <NavItem to="/partnership/ipp">IPP</NavItem>
-              <NavItem to="/partnership/bpp">BPP</NavItem>
-              <NavItem to="/partnership/comparison">IPP vs BPP</NavItem>
-            </MobileAccordion>
+              <div className="space-y-4">
+                <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5">
+                  <div className="text-2xl font-bold text-white mb-1">500+</div>
+                  <div className="text-xs text-gray-500">Active Partners</div>
+                </div>
+                <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5">
+                  <div className="text-2xl font-bold text-white mb-1">10K+</div>
+                  <div className="text-xs text-gray-500">Projects Delivered</div>
+                </div>
+              </div>
+            </div>
 
-            <MobileAccordion
-              label="Solutions"
-              isOpen={activeMobileDropdown === "solutions"}
-              onClick={() => toggleMobileDropdown("solutions")}
-            >
-              <NavItem to="/solutions/it-software">IT & Software</NavItem>
-              <NavItem to="/solutions/hr-recruitment">HR & Recruitment</NavItem>
-              <NavItem to="/solutions/digital-marketing">Digital Marketing</NavItem>
-              <NavItem to="/solutions/payroll">Payroll</NavItem>
-              <NavItem to="/solutions/legal">Legal</NavItem>
-              <NavItem to="/solutions/real-estate">Real Estate</NavItem>
-            </MobileAccordion>
-
-            <MobileAccordion
-              label="Operations"
-              isOpen={activeMobileDropdown === "operations"}
-              onClick={() => toggleMobileDropdown("operations")}
-            >
-              <NavItem to="/operations/demo-pre-sales">Demo & Pre-Sales Support</NavItem>
-              <NavItem to="/operations/delivery-management">Delivery Management</NavItem>
-              <NavItem to="/operations/vendor-management">Vendor Management</NavItem>
-              <NavItem to="/operations/quality-sla">Quality & SLA Control</NavItem>
-              <NavItem to="/operations/risk-control">Risk Control</NavItem>
-            </MobileAccordion>
-
-            <MobileAccordion
-              label="Resources"
-              isOpen={activeMobileDropdown === "resources"}
-              onClick={() => toggleMobileDropdown("resources")}
-            >
-              <NavItem to="/resources/blog">Blog</NavItem>
-              <NavItem to="/resources/faqs">FAQs</NavItem>
-              <NavItem to="/resources/knowledge-center">Knowledge Center</NavItem>
-              <NavItem to="/resources/partner-guidelines">Partner Guidelines</NavItem>
-            </MobileAccordion>
-
-            <MobileAccordion
-              label="Company"
-              isOpen={activeMobileDropdown === "company"}
-              onClick={() => toggleMobileDropdown("company")}
-            >
-              <NavItem to="/company/about">About</NavItem>
-              <NavItem to="/company/founder-note">Founder</NavItem>
-              <NavItem to="/company/vision-mission">Vision</NavItem>
-              <NavItem to="/company/careers">Careers</NavItem>
-              <NavItem to="/company/media">Media</NavItem>
-            </MobileAccordion>
-
-            <div className="mt-10 flex flex-col gap-3">
-              <Link
-                to="/contact"
-                className="py-4 text-center border border-white/20 rounded-xl font-bold hover:border-orange-400 transition-colors"
-              >
-                Contact Us
-              </Link>
-              <Link
-                to="/apply"
-                className="py-4 text-center bg-orange-500 rounded-xl font-bold text-white hover:bg-orange-400 transition-colors"
-              >
-                Apply Now
-              </Link>
+            <div className="pt-6 border-t border-white/5">
+              <p className="text-gray-500 text-xs leading-relaxed italic">
+                "Empowering the next generation of business ecosystems through systematic growth."
+              </p>
             </div>
           </div>
         </div>
-      </nav>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className={`fixed top-[70px] left-0 w-full h-[calc(100vh-70px)] bg-[#0a0a0a] z-40 lg:hidden transform transition-transform duration-500 ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}>
+        <div className="px-8 h-full overflow-y-auto pb-20 pt-8">
+          {navData.map((item) => (
+            <MobileAccordion
+              key={item.key}
+              label={item.label}
+              isOpen={openMobileAccordion === item.key}
+              onToggle={() => setOpenMobileAccordion(openMobileAccordion === item.key ? null : item.key)}
+            >
+              {item.leftTabs.map((t) => (
+                <div key={t.tab} className="mb-6">
+                  <div className="text-orange-500 text-[10px] uppercase tracking-widest font-bold mb-3 opacity-70">{t.tab}</div>
+                  <div className="flex flex-col gap-3">
+                    {t.links.map((l) => (
+                      <Link key={l.title} to={l.to} onClick={() => setIsMobileMenuOpen(false)} className="text-gray-300 text-lg font-light hover:text-white">
+                        {l.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </MobileAccordion>
+          ))}
+          <Link to="/apply" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-center py-4 mt-8 border border-orange-500 text-orange-500 uppercase tracking-widest font-bold rounded-full">
+            Join the System
+          </Link>
+        </div>
+      </div>
     </header>
   );
 }
 
-/* ---------- SHARED COMPONENTS ---------- */
-
-function DesktopDropdown({ label, children }) {
-  return (
-    <div className="relative group py-4 cursor-pointer">
-      <div className="flex items-center gap-1 hover:text-orange-400 transition-colors">
-        {label}
-      </div>
-
-      <div
-        className="absolute top-full left-1/2 -translate-x-1/2 min-w-[240px]
-        bg-black border border-white/10 rounded-xl shadow-2xl py-3
-        opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50"
-      >
-        {children}
-      </div>
-    </div>
-  );
-}
-
-function MobileAccordion({ label, children, isOpen, onClick }) {
+function MobileAccordion({ label, children, isOpen, onToggle }) {
   return (
     <div className="border-b border-white/10">
-      <button
-        onClick={onClick}
-        className="w-full flex justify-between py-4 sm:py-5 text-base sm:text-lg font-medium"
-      >
+      <button onClick={onToggle} className="w-full flex justify-between py-5 text-xl font-light tracking-wide uppercase">
         {label}
-        <span
-          className={`transition-transform duration-300 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        >
-          ▼
-        </span>
+        <span className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>↓</span>
       </button>
-
-      <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-[1200px] opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="pl-4 pb-4 flex flex-col gap-1">{children}</div>
+      <div className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"}`}>
+        <div className="pl-4 pb-6">{children}</div>
       </div>
     </div>
-  );
-}
-
-function NavItem({ to, children }) {
-  return (
-    <Link
-      to={to}
-      className="block px-4 py-2.5 sm:py-3 text-[15px] sm:text-base text-gray-400 hover:text-orange-400 hover:bg-orange-500/10 rounded-lg transition-colors"
-    >
-      {children}
-    </Link>
   );
 }
