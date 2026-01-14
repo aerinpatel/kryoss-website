@@ -11,12 +11,6 @@
   --text-muted: #7C8394;
 }
 
-html,
-body,
-#root {
-  overflow-x: hidden;
-  width: 100%;
-}
 
 body {
   background-color: var(--bg-main);
@@ -27,4 +21,31 @@ body {
 
 .input {
   @apply w-full px-4 py-3 rounded-lg bg-[var(--bg-card)] border border-[var(--border)] text-[var(--text-main)] placeholder-[var(--text-secondary)] focus:outline-none focus:border-[var(--accent)];
+}
+
+.logos-marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+}
+
+.logos-marquee__track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: logosMarqueeMove 18s linear infinite;
+}
+
+@keyframes logosMarqueeMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* hover to pause (premium SaaS feel) */
+.logos-marquee:hover .logos-marquee__track {
+  animation-play-state: paused;
 }

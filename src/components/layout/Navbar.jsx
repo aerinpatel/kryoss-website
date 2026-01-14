@@ -38,8 +38,8 @@ export default function Navbar() {
         {
           tab: "Overview",
           links: [
-            { title: "What is Zryoss", to: "/platform" },
-            { title: "Business Operating System", to: "/platform/business-operating-platform" },
+            { title: "What is Zryoss", to: "/system/what-is-zryoss" },
+            { title: "Business Operating System", to: "/system/business-operating-system" },
             { title: "How Zryoss Works", to: "/how-it-works/operating-model" },
             { title: "Dark to Direction (Philosophy)", to: "/company/founder-note" },
             { title: "Why Zryoss is Different", to: "/platform/ai-automation" },
