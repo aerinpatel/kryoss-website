@@ -43,7 +43,7 @@ export default function Navbar() {
             { title: "How Zryoss Works", to: "/system/how-zryoss-works" },
             { title: "Dark to Direction (Philosophy)", to: "/system/dark-to-direction" },
             { title: "Why Zryoss is Different", to: "/platform/ai-automation" },
-            { title: "Zryoss Methodology", to: "/system/zryoss-methodology" },
+            { title: "Zryoss Methodology", to: "/how-it-works/revenue-logic" },
           ],
         },
       ],
@@ -198,14 +198,14 @@ export default function Navbar() {
       <div className="relative max-w-[90rem] mx-auto px-6 lg:px-28 xl:px-32 h-[70px] flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-16">
-          <Link to="/" className="relative z-50">
-            <img
-              src="/Zryoss_logo_2_white.jpg"
-              alt="Logo"
-              className="w-32 h-auto brightness-110"
-            />
-          </Link>
-        </div>
+            <Link to="/" className="relative z-50">
+              <img
+                src="/Zryoss_logo_2_white.jpg"
+                alt="Logo"
+                className="w-48 h-auto brightness-110"
+              />
+            </Link>
+          </div>
 
         {/* Desktop Nav Items - Centered */}
         <nav className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8">
