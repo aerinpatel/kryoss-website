@@ -63,6 +63,11 @@ import GovernanceControl from "../pages/HowItWorks/GovernanceControl";
 // ✅ System pages
 import WhatIsZryossPage from "../pages/system/WhatIsZryossPage";
 import BusinessOperatingSystemPage from "../pages/system/BusinessOperatingSystemPage";
+import HowZryossWorksPage from "../pages/system/HowZryossWorksPage";
+import DarkToDirectionPage from "../pages/system/DarkToDirectionPage";
+import ZryossMethodologyPage from "../pages/system/ZryossMethodologyPage";
+
+
 
 export default function AppRoutes() {
   return (
@@ -146,6 +151,15 @@ export default function AppRoutes() {
         path="/system/business-operating-system"
         element={<BusinessOperatingSystemPage />}
       />
+      <Route path="/system/dark-to-direction" element={<DarkToDirectionPage />} />
+
+
+
+      <Route path="/system/how-zryoss-works" element={<HowZryossWorksPage />} />
+
+      <Route path="/system/zryoss-methodology" element={<ZryossMethodologyPage />} />
+
+
     </Routes>
   );
 }

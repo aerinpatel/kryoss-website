@@ -40,10 +40,10 @@ export default function Navbar() {
           links: [
             { title: "What is Zryoss", to: "/system/what-is-zryoss" },
             { title: "Business Operating System", to: "/system/business-operating-system" },
-            { title: "How Zryoss Works", to: "/how-it-works/operating-model" },
-            { title: "Dark to Direction (Philosophy)", to: "/company/founder-note" },
+            { title: "How Zryoss Works", to: "/system/how-zryoss-works" },
+            { title: "Dark to Direction (Philosophy)", to: "/system/dark-to-direction" },
             { title: "Why Zryoss is Different", to: "/platform/ai-automation" },
-            { title: "Zryoss Methodology", to: "/how-it-works/revenue-logic" },
+            { title: "Zryoss Methodology", to: "/system/zryoss-methodology" },
           ],
         },
       ],
