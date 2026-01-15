@@ -16,7 +16,7 @@ export default function WhatIsZryoss() {
       id="platform"
       className="py-24 bg-[#050505] relative overflow-hidden scroll-mt-24 z-10"
     >
-      {/* Background Decor (same as ProblemSection style) */}
+      {/* Background Decor */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/3 blur-[100px] rounded-full" />
 
@@ -82,54 +82,15 @@ export default function WhatIsZryoss() {
             </div>
           </FadeUp>
 
-          {/* RIGHT IMAGE */}
+          {/* ✅ RIGHT IMAGE ONLY */}
           <FadeUp delay={0.2}>
             <div className="relative w-full max-w-xl mx-auto">
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-white/[0.03] to-transparent group hover:border-orange-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/10">
-                {/* Pattern Layer */}
-                <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#f97316_1px,transparent_1px)] [background-size:22px_22px]" />
-
-                {/* Image */}
-                <div className="relative aspect-[4/3] w-full">
-                  <img
-                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80"
-
-                    alt="ZRYOSS Platform"
-                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-500"
-                  />
-
-                  {/* Dark overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                </div>
-
-                {/* Bottom Caption */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
-                    {["Execution", "Systems", "Delivery", "Scale"].map((tag, i) => (
-                      <span
-                        key={i}
-                        className="px-4 py-2 rounded-full border border-white/10 bg-black/40 backdrop-blur-md text-gray-200 text-xs uppercase tracking-[0.25em]"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <h3 className="text-white text-xl md:text-2xl font-semibold leading-snug">
-                    The backbone behind every ZRYOSS business
-                  </h3>
-
-                  <p className="text-gray-400 text-sm mt-2 leading-relaxed font-light max-w-md">
-                    A system that enables founders to operate like enterprises — without
-                    building enterprise overhead.
-                  </p>
-                </div>
-              </div>
-
-              {/* Corner Status Label */}
-              <div className="absolute top-4 right-4 z-20 px-4 py-2 rounded-full border border-white/10 bg-black/50 backdrop-blur-md text-[10px] uppercase tracking-[0.3em] text-gray-300 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_14px_rgba(34,197,94,0.6)]" />
-                System Active
+              <div className="rounded-3xl overflow-hidden border border-white/10 bg-white/[0.02] group hover:border-orange-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/10">
+                <img
+                  src="/what_imge.jpg"
+                  alt="ZRYOSS Platform"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </FadeUp>
