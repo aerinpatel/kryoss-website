@@ -74,7 +74,7 @@ export default function Footer() {
 
         {/* NAV SECTIONS */}
         {/* NAV SECTIONS */}
-<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-8 gap-x-8 gap-y-10 mb-16">
+<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 mb-16">
 
   {/* PLATFORM */}
   <FooterSection title="Platform">
@@ -87,13 +87,13 @@ export default function Footer() {
   </FooterSection>
 
   {/* HOW IT WORKS */}
-<FooterSection title="How It Works">
+{/* <FooterSection title="How It Works">
   <FooterLink to="/how-it-works">Operating Model</FooterLink>
   <FooterLink to="/how-it-works">Sales → Demo → Delivery Flow</FooterLink>
   <FooterLink to="/how-it-works">Revenue Logic</FooterLink>
   <FooterLink to="/how-it-works">Roles & Responsibilities</FooterLink>
   <FooterLink to="/how-it-works">Governance & Control</FooterLink>
-</FooterSection>
+</FooterSection> */}
 
     {/* ECOSYSTEM */}
 <FooterSection title="Ecosystem">
@@ -123,13 +123,13 @@ export default function Footer() {
 
 
     {/* OPERATIONS */}
-  <FooterSection title="Operations">
+  {/* <FooterSection title="Operations">
     <FooterLink to="/operations/demo-support">Demo & Pre-Sales Support</FooterLink>
     <FooterLink to="/operations/delivery-management">Delivery Management</FooterLink>
     <FooterLink to="/operations/vendor-network">Vendor Management</FooterLink>
     <FooterLink to="/operations/quality-assurance">Quality & SLA Control</FooterLink>
     <FooterLink to="/operations/risk-control">Risk Control</FooterLink>
-  </FooterSection>
+  </FooterSection> */}
 
   {/* RESOURCES */}
   <FooterSection title="Resources">

@@ -28,7 +28,7 @@ export default function HeroContact() {
               Contact Us
             </p>
 
-            <h1 className="text-4xl md:text-5xl xl:text-6xl font-light leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-6">
               Ready To Fuel Your{" "}
               <span className="text-orange-400">Vision</span> With{" "}
               <span className="block mt-3">AI-Powered Innovation?</span>

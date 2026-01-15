@@ -1,28 +1,32 @@
 import Hero from "./Hero";
-import WhatIsNot from "./WhatIsNot";
+import ProblemSection from "./ProblemSection";
+import WhatIsZryoss from "./WhatIsZryoss";
 import HowItWorks from "./HowItWorks";
+import PartnershipModels from "./PartnershipModels";
+import ManagementSection from "./ManagementSection";
 import Brands from "./Brands";
-import HeroCTA from "./HeroCTA.jsx";
 import Solutions from "./Soltions";
+import WhyZryoss from "./WhyZryoss";
+import DarkToDirection from "./DarkToDirection";
+// import WhatIsNot from "./WhatIsNot";
+import HeroCTA from "./HeroCTA";
 import HeroContact from "./HeroContact";
-import Industries from "./Industries.jsx";
-// import WhatIsNot from "./WhatIsNot.jsx";
-import Awards from "./Awards.jsx";
-import ImpactStats from "./ImpactStats.jsx";
-import Services from "./Services.jsx";
+// import HeroContact from "./HeroContact"; // Can be used in Footer or kept here if needed, but FinalCTA handles the main call.
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <ImpactStats />
+      <ProblemSection />
+      <WhatIsZryoss />
       <HowItWorks />
-     <WhatIsNot />
+      <PartnershipModels />
+      <ManagementSection />
       <Brands />
       <Solutions />
-      <Services />
-      <Awards />
-      <Industries />
+      <WhyZryoss />
+      {/* <WhatIsNot /> */}
+      <DarkToDirection />
       <HeroCTA />
       <HeroContact />
     </>

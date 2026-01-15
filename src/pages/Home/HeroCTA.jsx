@@ -28,7 +28,7 @@ export default function HeroCTA() {
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <h2 className="text-4xl md:text-5xl font-light leading-tight text-white">
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-6">
               Ready to build a{" "}
               <span className="text-orange-400">real, scalable business</span>{" "}
               with Zryoss?

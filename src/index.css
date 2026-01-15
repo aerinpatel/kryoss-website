@@ -11,22 +11,51 @@
   --text-muted: #7C8394;
 }
 
+/* ✅ FIX: mobile right-side extra space (horizontal overflow) */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background-color: var(--bg-main);
   color: var(--text-main);
-  font-family: Inter, system-ui, sans-serif;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-
+/* ✅ Input component */
 .input {
-  @apply w-full px-4 py-3 rounded-lg bg-[var(--bg-card)] border border-[var(--border)] text-[var(--text-main)] placeholder-[var(--text-secondary)] focus:outline-none focus:border-[var(--accent)];
+  @apply w-full px-4 py-3 rounded-lg bg-[var(--bg-card)] border border-[var(--border)]
+  text-[var(--text-main)] placeholder-[var(--text-secondary)]
+  focus:outline-none focus:border-[var(--accent)];
+  
+  /* ✅ avoid iOS zoom */
+  font-size: 16px;
 }
 
+/* ✅ Logos marquee */
 .logos-marquee {
   display: flex;
   overflow: hidden;
   user-select: none;
+  width: 100%;
 }
 
 .logos-marquee__track {
@@ -34,6 +63,9 @@ body {
   align-items: center;
   width: max-content;
   animation: logosMarqueeMove 18s linear infinite;
+
+  /* ✅ helps performance + overflow edge cases */
+  will-change: transform;
 }
 
 @keyframes logosMarqueeMove {
@@ -48,4 +80,32 @@ body {
 /* hover to pause (premium SaaS feel) */
 .logos-marquee:hover .logos-marquee__track {
   animation-play-state: paused;
+}
+
+/* ✅ slower marquee on small devices */
+@media (max-width: 640px) {
+  .logos-marquee__track {
+    animation-duration: 26s;
+  }
+}
+
+/* ✅ reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .logos-marquee__track {
+    animation: none;
+    transform: translateX(0);
+  }
+}
+
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -1,207 +1,177 @@
-import React, { useState, useEffect, useRef } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useTransform,
-  useMotionValueEvent,
-} from "framer-motion";
-import { ArrowRight, Image as ImageIcon } from "lucide-react";
+import React from "react";
+import { CheckCircle2, ArrowDown } from "lucide-react";
 
-/* ---------- Visual Placeholder ---------- */
-const VisualAsset = ({ label, src }) => {
-  const [hasError, setHasError] = useState(false);
-
-  useEffect(() => {
-    setHasError(false);
-  }, [src]);
-
+const FadeUp = ({ children, delay = 0 }) => {
   return (
-    <div className="relative w-full max-w-md aspect-square bg-[#0a0a0a] border border-orange-500/20 rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center group">
-      {src && !hasError ? (
-        <img
-          src={src}
-          alt={label}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          onError={() => setHasError(true)}
-        />
-      ) : (
-        <>
-          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#f97316_1px,transparent_1px)] [background-size:20px_20px]" />
-          <div className="relative z-10 flex flex-col items-center gap-4">
-            <div className="w-16 h-16 rounded-2xl bg-orange-500/10 flex items-center justify-center border border-orange-500/30">
-              <ImageIcon size={32} className="text-orange-500/50" />
-            </div>
-            <p className="text-white text-sm font-light opacity-60 italic">
-              "{label}"
-            </p>
-          </div>
-        </>
-      )}
+    <div
+      className="opacity-0 animate-fadeUp"
+      style={{ animationDelay: `${delay}s`, animationFillMode: "forwards" }}
+    >
+      {children}
     </div>
   );
 };
 
-/* ---------- MAIN COMPONENT ---------- */
-const HowItWorks = () => {
-  const containerRef = useRef(null);
-  const [currentVisual, setCurrentVisual] = useState(0);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
-
-  const activeIndex = useTransform(
-    scrollYProgress,
-    [0, 0.2, 0.4, 0.6, 0.8],
-    [0, 1, 2, 3, 4]
-  );
-
-  useMotionValueEvent(activeIndex, "change", (latest) => {
-    const rounded = Math.round(latest);
-    if (rounded !== currentVisual && rounded >= 0 && rounded < 5) {
-      setCurrentVisual(rounded);
-    }
-  });
-
+export default function HowItWorks() {
   const sections = [
     {
       label: "Step 01",
-      title: "Partner Onboarding",
-      desc:
-        "Partners join Zryoss to run their own business under their brand, leveraging our established infrastructure from day one.",
-      points: ["Brand Integration", "Portal Access", "Standard Operating Procedures"],
-      visualLabel: "Dashboard Onboarding Screen",
-      image: "/Partner-Onboarding.jpg",
+      title: "Brand Ownership",
+      desc: "You create and own your brand. ZRYOSS provides the underlying structure, but your business identity remains entirely yours.",
+      points: ["Full Brand Identity", "Independent Ownership", "Legal Independence"],
     },
     {
       label: "Step 02",
-      title: "Sales & Lead Gen",
-      desc:
-        "Partners focus exclusively on client acquisition and relationship management without worrying about technical overhead.",
-      points: ["Market Expansion", "Client Acquisition", "CRM Management"],
-      visualLabel: "Lead Generation Interface",
-      image: "/Sales-&-Lead-Generation.jpg",
+      title: "Client Acquisition",
+      desc: "You focus on bringing clients or opportunities. Whether it's a small project or a large enterprise deal, your job is the relationship.",
+      points: ["Relationship Management", "Lead Generation", "Opportunity Identification"],
     },
     {
       label: "Step 03",
-      title: "Demo by Zryoss",
-      desc:
-        "Our centralized demo and pre-sales team handles the technical heavy lifting, presenting your brand with expert precision.",
-      points: ["Technical Expertise", "Professional Presentation", "Higher Conversion Rates"],
-      visualLabel: "Technical Demo Presentation",
-      image: "/Brand.jpg",
+      title: "Central Validation",
+      desc: "Requirements are validated centrally by ZRYOSS to ensure technical feasibility and commercial viability before moving to the next stage.",
+      points: ["Technical Auditing", "Feasibility Check", "Commercial Alignment"],
     },
     {
       label: "Step 04",
-      title: "Delivery by Brands",
-      desc:
-        "Execution is handled by Zryoss brands and verified vendors, ensuring high-quality results and scalable operations.",
-      points: ["Verified Vendors", "Quality Assurance", "End-to-End Fulfillment"],
-      visualLabel: "Order Fulfillment Workflow",
-      image: "/Demo-by-Zryoss.jpg",
+      title: "Expert Demos",
+      desc: "Solutions and demos are delivered by domain experts under your brand name, ensuring the highest professional standards in every pitch.",
+      points: ["Subject Matter Experts", "Professional Pitching", "White-labeled Presentation"],
     },
     {
       label: "Step 05",
-      title: "Reporting & Payout",
-      desc:
-        "Transparent reporting with performance-based payouts. Track every metric of your business growth in real-time.",
-      points: ["Real-time Tracking", "Performance Incentives", "Zero Hidden Fees"],
-      visualLabel: "Analytics & Payout Chart",
-      image: "/pay.jpg",
+      title: "Routed Execution",
+      desc: "Execution is routed to our network of specialist brands and verified vendors who specialize in specific technology and business domains.",
+      points: ["Specialist Branding", "Domain Expertise", "Scale-ready Delivery"],
+    },
+    {
+      label: "Step 06",
+      title: "Governance & Quality",
+      desc: "Quality and timelines are strictly governed by ZRYOSS. We monitor every stage of the lifecycle to ensure delivery excellence.",
+      points: ["SLA Monitoring", "Quality Control", "Timeline Governance"],
+    },
+    {
+      label: "Step 07",
+      title: "Seamless Coordination",
+      desc: "A dedicated account manager coordinates everything. You stay client-facing while the system runs everything behind you.",
+      points: ["Single Point of Contact", "Resource Management", "Unified Reporting"],
     },
   ];
 
   return (
-    <section
-      ref={containerRef}
-      className="relative bg-[#050505] text-white w-full isolate"
-    >
-      {/* ✅ SECTION HEADING (RESTORED) */}
-      <div className="max-w-[90rem] mx-auto px-6 lg:px-28 xl:px-32 pt-28 pb-16 text-center flex flex-col items-center">
-        <span className="text-xs uppercase tracking-[0.4em] text-orange-500 font-semibold block mb-6">
-          How It Works
-        </span>
-        <h2 className="text-4xl md:text-5xl font-light leading-tight max-w-4xl">
-          A Structured Execution Model
-          <span className="block text-orange-400 mt-3">
-            Built for Scale & Control
-          </span>
-        </h2>
-      </div>
+    <section className="relative bg-[#050505] text-white py-24 overflow-hidden">
+      <style>{`
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(24px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeUp { animation: fadeUp 0.75s ease-out; }
+      `}</style>
 
-      <div className="max-w-[90rem] mx-auto flex flex-col lg:flex-row px-6 lg:px-28 xl:px-32">
-        {/* LEFT TEXT */}
-        <div className="w-full lg:w-1/2">
+      {/* Background */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-orange-500/10 blur-[140px] rounded-full" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-500/7 blur-[140px] rounded-full" />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-16 xl:px-20 relative z-10">
+        {/* Header */}
+        <FadeUp>
+          <div className="text-center mb-20">
+            <span className="text-xs uppercase tracking-[0.3em] text-orange-500 font-bold mb-4 block">
+              How It Works
+            </span>
+
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight max-w-4xl mx-auto mb-6">
+              A Structured Execution Model
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mt-2">
+                Built for Scale & Control
+              </span>
+            </h2>
+
+            <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full mb-6" />
+
+            <p className="text-gray-400 text-lg max-w-3xl mx-auto font-light">
+              Seven systematic steps that transform your business idea into a professionally executed reality
+            </p>
+          </div>
+        </FadeUp>
+
+        {/* Timeline Steps */}
+        <div className="max-w-4xl mx-auto space-y-8">
           {sections.map((section, i) => (
-            <div
-              key={i}
-              className="min-h-screen flex flex-col justify-center py-24 lg:pr-20"
-            >
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ margin: "-20%" }}
-                className="space-y-8"
-              >
-                <div className="text-orange-500 text-xs uppercase tracking-[0.4em] font-semibold flex items-center gap-3">
-                  <span className="w-8 h-px bg-orange-500" />
-                  {section.label}
-                </div>
+            <FadeUp key={i} delay={i * 0.1}>
+              <div className="relative group">
+                {/* Connecting Line */}
+                {i < sections.length - 1 && (
+                  <div className="absolute left-6 top-20 bottom-0 w-0.5 bg-gradient-to-b from-orange-500/50 to-orange-500/10 group-hover:from-orange-500 group-hover:to-orange-500/30 transition-all duration-500" />
+                )}
 
-                <h3 className="text-4xl md:text-5xl font-light leading-tight">
-                  {section.title}
-                </h3>
-
-                <p className="text-gray-400 text-lg leading-relaxed max-w-md font-light">
-                  {section.desc}
-                </p>
-
-                <div className="space-y-3">
-                  {section.points.map((p, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center gap-3 text-sm text-gray-300"
-                    >
-                      <div className="w-5 h-5 rounded-full border border-orange-500/30 flex items-center justify-center">
-                        <ArrowRight size={12} className="text-orange-500" />
-                      </div>
-                      {p}
+                <div className="relative flex gap-6 md:gap-8">
+                  {/* Step Number Circle */}
+                  <div className="shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-black font-bold text-lg shadow-lg shadow-orange-500/50 group-hover:scale-110 transition-transform duration-300">
+                      {String(i + 1).padStart(2, "0")}
                     </div>
-                  ))}
+                  </div>
+
+                  {/* Content Card */}
+                  <div className="flex-1 pb-8">
+                    <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent p-8 md:p-10 hover:border-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-500 group-hover:-translate-y-1">
+                      {/* Badge */}
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-[10px] uppercase tracking-[0.3em] font-bold mb-4">
+                        {section.label}
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">
+                        {section.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-gray-300 text-base md:text-lg leading-relaxed font-light mb-6">
+                        {section.desc}
+                      </p>
+
+                      {/* Key Points */}
+                      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+                        {section.points.map((point, idx) => (
+                          <div
+                            key={idx}
+                            className="flex items-start gap-2 p-3 rounded-xl bg-black/30 border border-white/5 hover:border-orange-500/20 transition-colors"
+                          >
+                            <CheckCircle2 className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
+                            <span className="text-gray-200 text-sm font-light leading-snug">
+                              {point}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="lg:hidden py-10 flex justify-center">
-                  <VisualAsset label={section.visualLabel} src={section.image} />
-                </div>
-              </motion.div>
-            </div>
+                {/* Arrow Indicator (between steps) */}
+                {i < sections.length - 1 && (
+                  <div className="absolute left-6 top-[4.5rem] -translate-x-1/2">
+                    <ArrowDown className="w-4 h-4 text-orange-500/50 animate-bounce" />
+                  </div>
+                )}
+              </div>
+            </FadeUp>
           ))}
-          <div className="h-[20vh]" />
         </div>
 
-        {/* RIGHT STICKY VISUAL */}
-        <div className="hidden lg:flex w-1/2 sticky top-0 h-screen items-center justify-center pl-10">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentVisual}
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -40, scale: 1.05 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <VisualAsset
-                label={sections[currentVisual]?.visualLabel}
-                src={sections[currentVisual]?.image}
-              />
-            </motion.div>
-          </AnimatePresence>
-        </div>
+        {/* Bottom CTA */}
+        <FadeUp delay={0.8}>
+          <div className="mt-16 text-center">
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-orange-500/30 bg-orange-500/10">
+              <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
+              <span className="text-orange-400 text-sm font-semibold uppercase tracking-wider">
+                Systemized • Structured • Scale-Ready
+              </span>
+            </div>
+          </div>
+        </FadeUp>
       </div>
     </section>
   );
-};
-
-export default HowItWorks;
+}

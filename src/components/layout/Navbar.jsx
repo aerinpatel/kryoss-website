@@ -7,8 +7,17 @@ export default function Navbar() {
   const [activeLeftTab, setActiveLeftTab] = useState("Overview");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMobileAccordion, setOpenMobileAccordion] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const navRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     setActiveMenu(null);
@@ -32,18 +41,20 @@ export default function Navbar() {
 
   const navData = [
     {
-      label: "System",
-      key: "system",
+      label: "Platform",
+      key: "platform",
       leftTabs: [
         {
           tab: "Overview",
           links: [
-            { title: "What is Zryoss", to: "/system/what-is-zryoss" },
-            { title: "Business Operating System", to: "/system/business-operating-system" },
-            { title: "How Zryoss Works", to: "/system/how-zryoss-works" },
-            { title: "Dark to Direction (Philosophy)", to: "/system/dark-to-direction" },
-            { title: "Why Zryoss is Different", to: "/platform/ai-automation" },
-            { title: "Zryoss Methodology", to: "/how-it-works/revenue-logic" },
+            { title: "What is Zryoss", to: "/platform/what-is-zryoss" },
+            { title: "Zryoss Business Operating Platform", to: "/platform/business-platform" },
+            { title: "How Zryoss Works (End-to-End)", to: "/platform/how-it-works" },
+            { title: "Zryoss Methodology", to: "/platform/methodology" },
+            { title: "Sales Enablement & Demo System", to: "/platform/sales-enablement" },
+            { title: "Centralized Operations Model", to: "/platform/operations-model" },
+            { title: "Technology & Automation Platform", to: "/platform/technology" },
+            { title: "Brand Launch & Support Framework", to: "/platform/brand-launch" },
           ],
         },
       ],
@@ -54,74 +65,63 @@ export default function Navbar() {
       leftTabs: [
         {
           tab: "Overview",
-          links: [{ title: "Ecosystem Overview", to: "/ecosystem" }],
-        },
-        {
-          tab: "Core Brands",
           links: [
-            { title: "Vyombiz – Business Growth", to: "/ecosystem/brands" },
-            { title: "Clink HR – Hiring & HR", to: "/ecosystem/brands" },
-            { title: "Edulinker – Education & Skills", to: "/ecosystem/brands" },
-            { title: "Medikryoss – Healthcare", to: "/ecosystem/brands" },
-            { title: "Kryoss Softech – Technology", to: "/ecosystem/brands" },
+            { title: "Ecosystem Overview", to: "/ecosystem/overview" },
+            { title: "Zryoss Operating System", to: "/ecosystem/operating-system" },
+            { title: "Partner & Vendor Network", to: "/ecosystem/vendors" },
+            { title: "Account Management Model", to: "/ecosystem/account-management" },
+            { title: "Ecosystem Scale Roadmap", to: "/ecosystem/roadmap" },
           ],
         },
         {
-          tab: "Ecosystem Layers",
+          tab: "Core Execution Brands",
           links: [
-            { title: "Vendor Network", to: "/ecosystem/vendors" },
-            { title: "Technology Stack", to: "/platform/technology" },
-            { title: "Sales & Distribution System", to: "/platform/sales-enablement" },
-            { title: "Marketing Engine", to: "/solutions/digital-marketing" },
-            { title: "Finance & Compliance Support", to: "/solutions/legal" },
-            { title: "Operations & Execution Layer", to: "/operations/delivery-management" },
+            { title: "Kryoss Softech", to: "/ecosystem/brands/kryoss-softech" },
+            { title: "Clink HR", to: "/ecosystem/brands/clink-hr" },
+            { title: "Vyombiz", to: "/ecosystem/brands/vyombiz" },
+            { title: "Edulinker", to: "/ecosystem/brands/edulinker" },
+            { title: "Medikryoss", to: "/ecosystem/brands/medikryoss" },
           ],
         },
       ],
     },
     {
-      label: "Partners",
-      key: "partners",
+      label: "Partnership",
+      key: "partnership",
       leftTabs: [
         {
           tab: "Overview",
           links: [
-            { title: "Partner Overview", to: "/partnership" },
-            { title: "Who Can Become a Partner", to: "/partnership" },
-            { title: "Partner Benefits", to: "/partnership" },
-            { title: "Revenue Model", to: "/partnership/comparison" },
-            { title: "Training & Enablement", to: "/resources/partner-guidelines" },
-            { title: "Partner Support System", to: "/resources/knowledge-center" },
-            { title: "Partner FAQs", to: "/resources/faqs" },
+            { title: "Partnership Overview", to: "/partnership" },
+            { title: "Partnership Philosophy", to: "/partnership/philosophy" },
+            { title: "Brand Ownership Model", to: "/partnership/brand-ownership" },
+            { title: "Execution & Support Scope", to: "/partnership/support-scope" },
+            { title: "Engagement Lifecycle", to: "/partnership/lifecycle" },
           ],
         },
-      ],
-    },
-    {
-      label: "IPP / BPP",
-      key: "ippbpp",
-      leftTabs: [
         {
           tab: "IPP",
           links: [
             { title: "IPP Overview", to: "/partnership/ipp" },
-            { title: "Who Should Join IPP", to: "/partnership/ipp" },
-            { title: "IPP Benefits", to: "/partnership/ipp" },
-            { title: "IPP Revenue Model", to: "/partnership/ipp" },
+            { title: "Brand Creation for IPP", to: "/partnership/ipp/brand-creation" },
+            { title: "IPP Business Model & Charges", to: "/partnership/ipp/business-model" },
+            { title: "IPP Operations Managed by Zryoss", to: "/partnership/ipp/operations" },
+            { title: "IPP Client Handling & Demo Support", to: "/partnership/ipp/support" },
+            { title: "IPP Sub-Partner Model (Limited Levels)", to: "/partnership/ipp/sub-partner" },
+            { title: "IPP Account Management (6 Months)", to: "/partnership/ipp/account-management" },
           ],
         },
         {
           tab: "BPP",
           links: [
             { title: "BPP Overview", to: "/partnership/bpp" },
-            { title: "Who Should Join BPP", to: "/partnership/bpp" },
-            { title: "BPP Benefits", to: "/partnership/bpp" },
-            { title: "BPP Revenue Model", to: "/partnership/bpp" },
+            { title: "Multi-Vertical Business Model (3 Verticals)", to: "/partnership/bpp/business-model" },
+            { title: "Brand & Business Setup by Zryoss", to: "/partnership/bpp/setup" },
+            { title: "BPP Operations & Demo Authority", to: "/partnership/bpp/operations" },
+            { title: "BPP IPP Creation & Management", to: "/partnership/bpp/ipp-management" },
+            { title: "BPP Revenue & Scale Model", to: "/partnership/bpp/revenue-model" },
+            { title: "BPP Dedicated Account Manager", to: "/partnership/bpp/account-manager" },
           ],
-        },
-        {
-          tab: "Compare",
-          links: [{ title: "Compare IPP vs BPP", to: "/partnership/comparison" }],
         },
       ],
     },
@@ -130,21 +130,50 @@ export default function Navbar() {
       key: "solutions",
       leftTabs: [
         {
-          tab: "By Need",
+          tab: "By Vertical",
           links: [
-            { title: "Start a Business", to: "/solutions/it-software" },
-            { title: "Scale an Existing Business", to: "/solutions/payroll" },
-            { title: "Build a Personal Brand", to: "/solutions/digital-marketing" },
-            { title: "Digital Transformation", to: "/solutions/it-software" },
+            { title: "Solutions Overview", to: "/solutions" },
+            { title: "IT & Software Solutions", to: "/solutions/it-software" },
+            { title: "HR & Recruitment Solutions", to: "/solutions/hr-recruitment" },
+            { title: "Digital Marketing Solutions", to: "/solutions/digital-marketing" },
+            { title: "Business Consulting & Setup", to: "/solutions/business-consulting" },
+            { title: "Legal & Compliance Services", to: "/solutions/legal-compliance" },
+            { title: "Real Estate & Interior Solutions", to: "/solutions/real-estate-interior" },
+            { title: "Custom Industry Solutions", to: "/solutions/custom-industry" },
           ],
         },
+      ],
+    },
+    {
+      label: "Operations",
+      key: "operations",
+      leftTabs: [
         {
-          tab: "By Role",
+          tab: "Overview",
           links: [
-            { title: "For Job Seekers", to: "/solutions/hr-recruitment" },
-            { title: "For Freelancers", to: "/solutions/digital-marketing" },
-            { title: "For Startups", to: "/solutions/it-software" },
-            { title: "For Enterprises", to: "/solutions/legal" },
+            { title: "Operations Overview", to: "/operations" },
+            { title: "Client Onboarding Process", to: "/operations/onboarding" },
+            { title: "Delivery & Execution Management", to: "/operations/delivery" },
+            { title: "Quality Assurance Framework", to: "/operations/quality-assurance" },
+            { title: "Account Management & Support", to: "/operations/account-management" },
+            { title: "Vendor Coordination Model", to: "/operations/vendor-coordination" },
+            { title: "Reporting & Performance Tracking", to: "/operations/reporting" },
+          ],
+        },
+      ],
+    },
+    {
+      label: "Company",
+      key: "company",
+      leftTabs: [
+        {
+          tab: "About",
+          links: [
+            { title: "About Zryoss", to: "/company/about" },
+            { title: "Vision & Leadership", to: "/company/vision-leadership" },
+            { title: "Ethics & Governance", to: "/company/ethics-governance" },
+            { title: "Risk Disclosure", to: "/company/risk-disclosure" },
+            { title: "Disclaimer", to: "/company/disclaimer" },
           ],
         },
       ],
@@ -156,29 +185,8 @@ export default function Navbar() {
         {
           tab: "Explore",
           links: [
-            { title: "Blogs", to: "/resources/blog" },
-            { title: "Case Studies", to: "/resources/knowledge-center" },
-            { title: "Success Stories", to: "/resources/knowledge-center" },
-            { title: "Playbooks & Guides", to: "/resources/partner-guidelines" },
+            { title: "Blog / Insights", to: "/resources/blog" },
             { title: "FAQs", to: "/resources/faqs" },
-            { title: "Events & Webinars", to: "/resources/blog" },
-          ],
-        },
-      ],
-    },
-    {
-      label: "Company",
-      key: "company",
-      leftTabs: [
-        {
-          tab: "Overview",
-          links: [
-            { title: "About Zryoss", to: "/company/about" },
-            { title: "Vision & Mission", to: "/company/vision-mission" },
-            { title: "Leadership & Core Team", to: "/company/about" },
-            { title: "Careers", to: "/company/careers" },
-            { title: "Contact Us", to: "/contact" },
-            { title: "Legal & Compliance", to: "/company/media" },
           ],
         },
       ],
@@ -192,23 +200,25 @@ export default function Navbar() {
   return (
     <header
       ref={navRef}
-      className="fixed top-0 w-full z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5 text-white"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 border-b text-white ${isScrolled
+        ? "bg-[#0a0a0a]/95 backdrop-blur-xl border-white/10 shadow-2xl"
+        : "bg-[#0a0a0a]/60 backdrop-blur-md border-white/5"}`}
     >
       {/* Top Bar */}
       <div className="relative max-w-[90rem] mx-auto px-6 lg:px-28 xl:px-32 h-[70px] flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-16">
-            <Link to="/" className="relative z-50">
-              <img
-                src="/Zryoss_logo_2_white.jpg"
-                alt="Logo"
-                className="w-48 h-auto brightness-110"
-              />
-            </Link>
-          </div>
+          <Link to="/" className="relative z-50">
+            <img
+              src="/Zryoss_logo_2_white.jpg"
+              alt="Logo"
+              className="w-48 h-auto brightness-110"
+            />
+          </Link>
+        </div>
 
         {/* Desktop Nav Items - Centered */}
-        <nav className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8">
+        <nav className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-7">
           {navData.map((item) => (
             <button
               key={item.key}
@@ -216,7 +226,14 @@ export default function Navbar() {
                 setActiveMenu(item.key);
                 setActiveLeftTab(item.leftTabs[0]?.tab || "Overview");
               }}
-              className={`group relative py-[25px] text-[14px] font-medium transition-all duration-300 ${activeMenu === item.key
+              onClick={() => {
+                const element = document.getElementById(item.key);
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                  setActiveMenu(null);
+                }
+              }}
+              className={`group relative py-[25px] text-[13px] font-medium transition-all duration-300 ${activeMenu === item.key
                 ? "text-white"
                 : "text-gray-400 hover:text-white"
                 }`}
@@ -236,9 +253,9 @@ export default function Navbar() {
         <div className="flex items-center gap-6">
           <Link
             to="/apply"
-            className="hidden lg:flex items-center gap-2 px-6 py-2.5 text-[14px] font-semibold bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white transition-all rounded-full shadow-[0_0_20px_rgba(234,88,12,0.3)] hover:shadow-[0_0_30px_rgba(234,88,12,0.5)] transform hover:scale-105"
+            className="hidden lg:flex items-center gap-2 px-6 py-2.5 text-[13px] font-semibold bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white transition-all rounded-full shadow-[0_0_20px_rgba(234,88,12,0.3)] hover:shadow-[0_0_30px_rgba(234,88,12,0.5)] transform hover:scale-105"
           >
-            Join the System
+           Contact
           </Link>
 
           <button
@@ -365,7 +382,7 @@ export default function Navbar() {
             </MobileAccordion>
           ))}
           <Link to="/apply" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-center py-4 mt-8 border border-orange-500 text-orange-500 uppercase tracking-widest font-bold rounded-full">
-            Join the System
+            Apply / Contact
           </Link>
         </div>
       </div>
