@@ -20,8 +20,9 @@ export default function WhatIsZryoss() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/3 blur-[100px] rounded-full" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-16 xl:px-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+      {/* ✅ width aligned with navbar/footer */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
           {/* LEFT CONTENT */}
           <FadeUp>
             <div className="space-y-10">
@@ -39,9 +40,9 @@ export default function WhatIsZryoss() {
                   ?
                 </h2>
 
-                <div className="w-24 h-1 bg-orange-500 rounded-full mb-6" />
+                <div className="w-24 h-1 bg-orange-500 rounded-full mb-10" />
 
-                <p className="text-gray-400 text-lg leading-relaxed font-light max-w-xl">
+                <p className="text-gray-300 text-lg leading-relaxed font-light max-w-xl">
                   ZRYOSS provides a ready-to-use business operating backbone that
                   lets you focus on growth and relationships — while we handle the
                   complex execution behind the scenes.
@@ -49,7 +50,7 @@ export default function WhatIsZryoss() {
               </div>
 
               {/* Bullet Points */}
-              <div className="space-y-4 pt-2">
+              <div className="space-y-5 pt-4">
                 {points.map((point, idx) => (
                   <div key={idx} className="flex items-start gap-4">
                     <div className="mt-0.5">
@@ -62,35 +63,48 @@ export default function WhatIsZryoss() {
                   </div>
                 ))}
               </div>
+            </div>
+          </FadeUp>
 
-              {/* Quote Card */}
-              <div className="pt-6">
-                <div className="relative p-7 md:p-8 rounded-3xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 overflow-hidden group hover:border-orange-500/30 transition-all duration-500">
-                  {/* Glow */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          {/* RIGHT (Image frame + Quote frame like screenshot) */}
+          <FadeUp delay={0.15}>
+            <div className="space-y-10">
+              {/* ✅ TOP IMAGE FRAME (exact like screenshot - no extra inner border) */}
+                  <div className="relative rounded-[42px] border border-orange-500/25 bg-black/40 overflow-hidden">
+                    {/* padding like frame */}
+                    <div className="p-10">
+                      <div className="relative rounded-[28px] overflow-hidden shadow-[0_35px_90px_rgba(0,0,0,0.75)]">
+                        <img
+                          src="/what_imge.jpg"
+                          alt="ZRYOSS Platform"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
 
-                  <p className="relative z-10 text-white text-lg md:text-xl font-light leading-relaxed italic border-l-2 border-orange-500 pl-6">
+                    {/* subtle glow */}
+                    <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-orange-500/10 via-transparent to-transparent opacity-70" />
+                  </div>
+
+
+              {/* ✅ BOTTOM QUOTE FRAME (like screenshot bottom card) */}
+              <div className="relative rounded-[32px] border border-white/10 bg-white/[0.04] backdrop-blur-xl overflow-hidden shadow-[0_18px_50px_rgba(0,0,0,0.55)]">
+                {/* glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent opacity-60 pointer-events-none" />
+
+                <div className="relative p-8 md:p-10">
+                  {/* left orange bar */}
+                  <div className="absolute left-0 top-8 bottom-8 w-[3px] bg-orange-500 rounded-full" />
+
+                  <p className="text-white text-lg md:text-xl font-light leading-relaxed italic pl-8">
                     “You focus on growth and relationships.
                     <br />
-                    <span className="text-orange-400 font-medium italic">
+                    <span className="text-orange-400 font-semibold italic">
                       ZRYOSS handles execution and operations.
                     </span>
                     ”
                   </p>
                 </div>
-              </div>
-            </div>
-          </FadeUp>
-
-          {/* ✅ RIGHT IMAGE ONLY */}
-          <FadeUp delay={0.2}>
-            <div className="relative w-full max-w-xl mx-auto">
-              <div className="rounded-3xl overflow-hidden border border-white/10 bg-white/[0.02] group hover:border-orange-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/10">
-                <img
-                  src="/what_imge.jpg"
-                  alt="ZRYOSS Platform"
-                  className="w-full h-full object-cover"
-                />
               </div>
             </div>
           </FadeUp>

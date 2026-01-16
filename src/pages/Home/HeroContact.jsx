@@ -19,7 +19,8 @@ export default function HeroContact() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(251,146,60,0.18),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(249,115,22,0.18),transparent_50%)]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 grid lg:grid-cols-12 gap-20 items-center">
+      {/* ✅ same width + padding as navbar/footer */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 grid lg:grid-cols-12 gap-20 items-center">
         {/* LEFT CONTENT */}
         <div className="lg:col-span-6 space-y-10">
           <div>
@@ -29,9 +30,8 @@ export default function HeroContact() {
             </p>
 
             <h1 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-6">
-              Ready To Fuel Your{" "}
-              <span className="text-orange-400">Vision</span> With{" "}
-              <span className="block mt-3">AI-Powered Innovation?</span>
+              Ready To Fuel Your <span className="text-orange-400">Vision</span>{" "}
+              With <span className="block mt-3">AI-Powered Innovation?</span>
             </h1>
           </div>
 
@@ -56,7 +56,7 @@ export default function HeroContact() {
             </div>
           </div>
 
-          {/* CONTACT DETAILS – FROM CONTACT PAGE */}
+          {/* CONTACT DETAILS */}
           <div className="space-y-4 text-sm text-gray-300 max-w-md leading-relaxed">
             <p>
               Office No. 837-A, 8th Floor <br />
@@ -64,13 +64,9 @@ export default function HeroContact() {
               Gurgaon, Haryana, India
             </p>
 
-            <p className="underline underline-offset-4">
-              info@zryoss.com
-            </p>
+            <p className="underline underline-offset-4">info@zryoss.com</p>
 
-            <p className="underline underline-offset-4">
-              +91 98765 43210
-            </p>
+            <p className="underline underline-offset-4">+91 98765 43210</p>
           </div>
         </div>
 
@@ -80,7 +76,7 @@ export default function HeroContact() {
             {/* Decorative shape */}
             <div className="absolute -top-6 -right-6 w-20 h-20 border-2 border-orange-400/40 rounded-xl rotate-45" />
 
-            <p className="text-lg mb-8 max-w-sm">
+            <p className="text-lg mb-8 max-w-sm text-white/90">
               Partner With Experts Who Leverage AI & Tech To Transform Ideas
               Into Market-Leading Solutions.
             </p>
@@ -93,10 +89,7 @@ export default function HeroContact() {
 
               <input placeholder="Email" className={INPUT} />
 
-              <input
-                placeholder="Phone Number"
-                className={INPUT}
-              />
+              <input placeholder="Phone Number" className={INPUT} />
 
               <textarea
                 rows="4"
@@ -109,7 +102,7 @@ export default function HeroContact() {
                 className="w-full mt-4 bg-orange-400 hover:bg-orange-500 text-white font-semibold py-4 rounded-xl flex items-center justify-between px-6 transition-all"
               >
                 Lets Connect
-                <span className="bg-orange rounded-lg p-2">
+                <span className="rounded-lg p-2 bg-white/10">
                   <ArrowRight size={16} />
                 </span>
               </button>

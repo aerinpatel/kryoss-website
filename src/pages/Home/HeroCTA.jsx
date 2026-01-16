@@ -17,8 +17,8 @@ const FadeUp = ({ children, delay = 0 }) => (
 export default function HeroCTA() {
   return (
     <section className="relative bg-[#050505] border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 py-28 grid lg:grid-cols-12 gap-16 items-center">
-        
+      {/* ✅ same width + padding as navbar/footer */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 grid lg:grid-cols-12 gap-16 items-center">
         {/* LEFT – TEXT */}
         <div className="lg:col-span-7">
           <FadeUp>
@@ -45,9 +45,7 @@ export default function HeroCTA() {
 
           <FadeUp delay={0.3}>
             <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-              <button
-                className="group inline-flex items-center gap-4 px-7 py-4 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold transition-all"
-              >
+              <button className="group inline-flex items-center gap-4 px-7 py-4 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold transition-all">
                 Apply as Partner
                 <ArrowRight
                   size={18}

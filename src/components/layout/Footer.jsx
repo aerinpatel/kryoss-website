@@ -6,6 +6,7 @@ import {
   Instagram,
   ArrowRight,
   ShieldCheck,
+  ExternalLink,
 } from "lucide-react";
 
 export default function Footer() {
@@ -16,22 +17,21 @@ export default function Footer() {
       {/* Top Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-orange-500/50 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-4 pt-20 pb-10">
-
+      {/* ✅ Width SAME as Navbar */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
         {/* BRAND + NEWSLETTER */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
-
           {/* BRAND */}
           <div className="lg:col-span-4 space-y-6">
             <Link to="/">
               <img
                 src="/Zryoss_logo_2_white.jpg"
                 alt="Zryoss Logo"
-                className="h-12 w-auto object-contain"
+                className="h-10 w-auto object-contain brightness-110"
               />
             </Link>
 
-            <p className="text-gray-400 text-[17px] leading-relaxed max-w-md">
+            <p className="text-gray-400 text-[16px] leading-relaxed max-w-md">
               India's first execution-focused operating platform for the next
               generation of enterprises. Scaling systems, not just software.
             </p>
@@ -72,93 +72,96 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* NAV SECTIONS */}
-        {/* NAV SECTIONS */}
-<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 mb-16">
+        {/* ✅ NAV SECTIONS */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-x-10 gap-y-10 mb-16">
+          {/* PLATFORM */}
+          <FooterSection title="Platform">
+            <FooterLink to="/platform/what-is-zryoss">What is Zryoss</FooterLink>
+            <FooterLink to="/platform/business-platform">
+              Business Platform
+            </FooterLink>
+            <FooterLink to="/platform/methodology">Methodology</FooterLink>
+            <FooterLink to="/platform/technology">Technology</FooterLink>
+          </FooterSection>
 
-  {/* PLATFORM */}
-  <FooterSection title="Platform">
-    <FooterLink to="/platform">What is Zryoss</FooterLink>
-    <FooterLink to="/platform">Business Operating Platform</FooterLink>
-    <FooterLink to="/platform">Sales Enablement System</FooterLink>
-    <FooterLink to="/platform">Technology Platform</FooterLink>
-    <FooterLink to="/platform">AI & Automation Vision</FooterLink>
+          {/* ECOSYSTEM */}
+          <FooterSection title="Ecosystem">
+            <FooterLink to="/ecosystem/overview">Ecosystem Overview</FooterLink>
+            <FooterLink to="/ecosystem/operating-system">
+              Operating System
+            </FooterLink>
+            <FooterLink to="/ecosystem/vendors">Partner Network</FooterLink>
+            <FooterLink to="/ecosystem/roadmap">Scale Roadmap</FooterLink>
+          </FooterSection>
 
-  </FooterSection>
+          {/* PARTNERSHIP */}
+          <FooterSection title="Partnership">
+            <FooterLink to="/partnership">Overview</FooterLink>
+            <FooterLink to="/partnership/ipp">IPP</FooterLink>
+            <FooterLink to="/partnership/bpp">BPP</FooterLink>
+            <FooterLink to="/partnership/support-scope">Support Scope</FooterLink>
+          </FooterSection>
 
-  {/* HOW IT WORKS */}
-{/* <FooterSection title="How It Works">
-  <FooterLink to="/how-it-works">Operating Model</FooterLink>
-  <FooterLink to="/how-it-works">Sales → Demo → Delivery Flow</FooterLink>
-  <FooterLink to="/how-it-works">Revenue Logic</FooterLink>
-  <FooterLink to="/how-it-works">Roles & Responsibilities</FooterLink>
-  <FooterLink to="/how-it-works">Governance & Control</FooterLink>
-</FooterSection> */}
+          {/* SOLUTIONS */}
+          <FooterSection title="Solutions">
+            <FooterLink to="/solutions">Solutions Overview</FooterLink>
+            <FooterLink to="/solutions/it-software">IT & Software</FooterLink>
+            <FooterLink to="/solutions/hr-recruitment">
+              HR & Recruitment
+            </FooterLink>
+            <FooterLink to="/solutions/digital-marketing">
+              Digital Marketing
+            </FooterLink>
+          </FooterSection>
 
-    {/* ECOSYSTEM */}
-<FooterSection title="Ecosystem">
-  <FooterLink to="/ecosystem">Ecosystem Overview</FooterLink>
-  <FooterLink to="/ecosystem">Brands Under Zryoss</FooterLink>
-  <FooterLink to="/ecosystem">Vendor Network</FooterLink>
-  <FooterLink to="/ecosystem">Partner Network</FooterLink>
-</FooterSection>
+          {/* OPERATIONS */}
+          <FooterSection title="Operations">
+            <FooterLink to="/operations">Operations Overview</FooterLink>
+            <FooterLink to="/operations/onboarding">Onboarding</FooterLink>
+            <FooterLink to="/operations/delivery">Delivery</FooterLink>
+            <FooterLink to="/operations/reporting">Reporting</FooterLink>
+          </FooterSection>
 
-  {/* PARTNERSHIP */}
-  <FooterSection title="Partnership">
-    <FooterLink to="/partnership">Overview</FooterLink>
-    <FooterLink to="/partnership/ipp">IPP</FooterLink>
-    <FooterLink to="/partnership/bpp">BPP</FooterLink>
-    <FooterLink to="/partnership/comparison">IPP vs BPP</FooterLink>
-  </FooterSection>
+          {/* RESOURCES */}
+          <FooterSection title="Resources">
+            <FooterLink to="/resources/blog">Blog / Insights</FooterLink>
+            <FooterLink to="/resources/faqs">FAQs</FooterLink>
+          </FooterSection>
 
-  {/* SOLUTIONS */}
-  <FooterSection title="Solutions">
-    <FooterLink to="/solutions/it-software">IT & Software</FooterLink>
-    <FooterLink to="/solutions/hr-recruitment">HR & Recruitment</FooterLink>
-    <FooterLink to="/solutions/digital-marketing">Digital Marketing</FooterLink>
-    <FooterLink to="/solutions/payroll">Payroll</FooterLink>
-    <FooterLink to="/solutions/legal">Legal</FooterLink>
-    <FooterLink to="/solutions/real-estate">Real Estate</FooterLink>
-  </FooterSection>
+          {/* COMPANY */}
+          <FooterSection title="Company">
+            <FooterLink to="/company/about">About</FooterLink>
+            <FooterLink to="/company/vision-leadership">
+              Vision & Leadership
+            </FooterLink>
+            <FooterLink to="/company/ethics-governance">
+              Ethics & Governance
+            </FooterLink>
+            <FooterLink to="/company/risk-disclosure">Risk Disclosure</FooterLink>
+          </FooterSection>
+        </div>
 
-
-    {/* OPERATIONS */}
-  {/* <FooterSection title="Operations">
-    <FooterLink to="/operations/demo-support">Demo & Pre-Sales Support</FooterLink>
-    <FooterLink to="/operations/delivery-management">Delivery Management</FooterLink>
-    <FooterLink to="/operations/vendor-network">Vendor Management</FooterLink>
-    <FooterLink to="/operations/quality-assurance">Quality & SLA Control</FooterLink>
-    <FooterLink to="/operations/risk-control">Risk Control</FooterLink>
-  </FooterSection> */}
-
-  {/* RESOURCES */}
-  <FooterSection title="Resources">
-    <FooterLink to="/resources/blog">Blog</FooterLink>
-    <FooterLink to="/resources/faqs">FAQs</FooterLink>
-    <FooterLink to="/resources/knowledge-center">Knowledge Center</FooterLink>
-    <FooterLink to="/resources/partner-guidelines">Guidelines</FooterLink>
-  </FooterSection>
-
-  {/* COMPANY */}
-  <FooterSection title="Company">
-    <FooterLink to="/company/about">About</FooterLink>
-    <FooterLink to="/company/founder-note">Founder</FooterLink>
-    <FooterLink to="/company/vision-mission">Vision</FooterLink>
-    <FooterLink to="/company/careers">Careers</FooterLink>
-    <FooterLink to="/company/media">Media</FooterLink>
-
-  </FooterSection>
-
-</div>
-
-
-        {/* BOTTOM */}
+        {/* ✅ BOTTOM */}
         <div className="pt-8 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center gap-8">
           <div className="flex flex-col md:flex-row items-center gap-6">
-            <p className="text-sm text-gray-500">
-              © {currentYear}{" "}
-              <span className="text-gray-200 font-semibold">Zryoss</span>
-            </p>
+            <div className="text-center md:text-left">
+              <p className="text-sm text-gray-500">
+                © {currentYear}{" "}
+                <span className="text-gray-200 font-semibold">Zryoss</span>
+              </p>
+
+              {/* ✅ Powered by clickable + external icon */}
+              <p className="text-[12px] text-gray-600 mt-1">
+                Powered by{" "}
+                <Link
+                  to="https://kryosssoftech.org/"
+                  className="inline-flex items-center gap-1 text-gray-300 font-semibold hover:text-orange-400 transition-colors"
+                >
+                  Kryoss Softech
+                  <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+                </Link>
+              </p>
+            </div>
 
             <div className="flex gap-6 text-[11px] uppercase tracking-widest text-gray-500">
               <Link to="/privacy" className="hover:text-orange-500">
@@ -176,7 +179,9 @@ export default function Footer() {
           {/* TRUST */}
           <div className="flex items-center gap-6 opacity-40 hover:opacity-100 transition-opacity">
             <ShieldCheck size={20} className="text-orange-500" />
-            <span className="text-[12px] font-bold tracking-widest">ISO 27001</span>
+            <span className="text-[12px] font-bold tracking-widest">
+              ISO 27001
+            </span>
             <span className="text-[12px] font-bold tracking-widest">GDPR</span>
           </div>
         </div>
@@ -186,7 +191,6 @@ export default function Footer() {
 }
 
 /* HELPERS */
-
 function FooterSection({ title, children }) {
   return (
     <div className="space-y-4">
@@ -203,7 +207,7 @@ function FooterLink({ to, children }) {
     <li>
       <Link
         to={to}
-        className="text-gray-400 hover:text-white text-[15px] transition-all duration-200 inline-block transform hover:translate-x-1"
+        className="text-gray-400 hover:text-white text-[14px] transition-all duration-200 inline-block transform hover:translate-x-1"
       >
         {children}
       </Link>
@@ -215,8 +219,7 @@ function SocialIcon({ icon }) {
   return (
     <a
       href="#"
-      className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 text-gray-400
-      hover:bg-orange-500 hover:text-white transition-all duration-300"
+      className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 text-gray-400 hover:bg-orange-500 hover:text-white transition-all duration-300"
     >
       {icon}
     </a>
